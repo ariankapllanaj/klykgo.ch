@@ -20,13 +20,13 @@ const de = {
   },
   hero: {
     kicker: "KLYKGO / SWISS MARKETING AGENCY",
-    line1: "Wir machen",
-    line2: "Marken",
-    accent: "sichtbar.",
+    line1: "Strategie.",
+    line2: "Sichtbarkeit.",
+    accent: "Wachstum.",
     subtitle: "Marketing, Branding, Webdesign & Development, Werbetechnik und Content als ein starker Auftritt aus einer Hand.",
     start: "Projekt starten",
     explore: "Leistungen ansehen",
-    end: "STRATEGIE · KREATION · UMSETZUNG",
+    end: "STRATEGIE · SICHTBARKEIT · WACHSTUM",
     floating: [
       ["📈", "Marketing"], ["✦", "Branding"], ["</>", "Development"], ["🚘", "Werbetechnik"],
       ["🎥", "Content"], ["📣", "Kampagnen"], ["📷", "Foto"]
@@ -77,9 +77,9 @@ const de = {
     eyebrow: "Nicht fünf Dienstleister.",
     title: "Ein Team, das zusammendenkt.",
     cards: [
-      ["01", "Strategisch.", "Wir starten nicht beim Design, sondern beim Ziel. Jede Massnahme bekommt einen klaren Grund."],
-      ["02", "Kreativ.", "Ein starker Auftritt muss auffallen und trotzdem zur Marke passen, online, auf Papier und im Raum."],
-      ["03", "Umsetzungsstark.", "Vom Konzept bis zum fertigen Webprodukt, Content oder Werbemittel bleibt alles in einem klaren Prozess."]
+      ["01", "STRATEGIE", "Wir schaffen die Grundlage."],
+      ["02", "SICHTBARKEIT", "Wir machen Ihre Marke sichtbar."],
+      ["03", "WACHSTUM", "Wir verwandeln Aufmerksamkeit in messbare Ergebnisse."]
     ]
   },
   process: {
@@ -218,9 +218,9 @@ const en: Dictionary = {
   },
   hero: {
     kicker: "KLYKGO / SWISS MARKETING AGENCY",
-    line1: "We make", line2: "brands", accent: "visible.",
+    line1: "Strategy.", line2: "Visibility.", accent: "Growth.",
     subtitle: "Marketing, branding, web design & development, signage and content combined into one strong brand presence.",
-    start: "Start a project", explore: "Explore services", end: "STRATEGY · CREATION · DELIVERY",
+    start: "Start a project", explore: "Explore services", end: "STRATEGY · VISIBILITY · GROWTH",
     floating: [["📈", "Marketing"], ["✦", "Branding"], ["</>", "Development"], ["🚘", "Signage"], ["🎥", "Content"], ["📣", "Campaigns"], ["📷", "Photo"]]
   },
   intro: {
@@ -239,9 +239,9 @@ const en: Dictionary = {
   why: {
     label: "03 / WHY KLYKGO", eyebrow: "Not five different providers.", title: "One team thinking together.",
     cards: [
-      ["01", "Strategic.", "We do not start with design. We start with the objective, so every action has a clear reason."],
-      ["02", "Creative.", "A strong brand presence should stand out while still feeling true to the brand, online, in print and in physical spaces."],
-      ["03", "Built to deliver.", "From concept to the finished website, content or advertising material, everything follows one clear process."]
+      ["01", "STRATEGY", "We create the foundation."],
+      ["02", "VISIBILITY", "We make your brand visible."],
+      ["03", "GROWTH", "We turn attention into measurable results."]
     ]
   },
   process: {
@@ -343,9 +343,9 @@ const fr: Dictionary = {
   },
   hero: {
     kicker: "KLYKGO / SWISS MARKETING AGENCY",
-    line1: "Nous rendons", line2: "les marques", accent: "visibles.",
+    line1: "Stratégie.", line2: "Visibilité.", accent: "Croissance.",
     subtitle: "Marketing, branding, web design & développement, signalétique et contenu réunis dans une présence de marque forte.",
-    start: "Démarrer un projet", explore: "Découvrir les services", end: "STRATÉGIE · CRÉATION · RÉALISATION",
+    start: "Démarrer un projet", explore: "Découvrir les services", end: "STRATÉGIE · VISIBILITÉ · CROISSANCE",
     floating: [["📈", "Marketing"], ["✦", "Branding"], ["</>", "Développement"], ["🚘", "Signalétique"], ["🎥", "Contenu"], ["📣", "Campagnes"], ["📷", "Photo"]]
   },
   intro: {
@@ -364,9 +364,9 @@ const fr: Dictionary = {
   why: {
     label: "03 / POURQUOI KLYKGO", eyebrow: "Pas cinq prestataires différents.", title: "Une équipe qui pense ensemble.",
     cards: [
-      ["01", "Stratégique.", "Nous ne commençons pas par le design, mais par l'objectif. Chaque action répond à une raison claire."],
-      ["02", "Créatif.", "Une présence forte doit se démarquer tout en restant fidèle à la marque, en ligne, sur papier et dans l'espace physique."],
-      ["03", "Orienté exécution.", "Du concept au produit web, au contenu ou au support publicitaire final, tout suit un processus clair."]
+      ["01", "STRATÉGIE", "Nous créons les bases."],
+      ["02", "VISIBILITÉ", "Nous rendons votre marque visible."],
+      ["03", "CROISSANCE", "Nous transformons l’attention en résultats mesurables."]
     ]
   },
   process: {

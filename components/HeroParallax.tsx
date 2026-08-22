@@ -102,7 +102,9 @@ export default function HeroParallax() {
           <h1>
             {t.hero.line1}
             <br />
-            {t.hero.line2} <em>{t.hero.accent}</em>
+            {t.hero.line2}
+            <br />
+            <em>{t.hero.accent}</em>
           </h1>
           <p className="hero-subtitle">{t.hero.subtitle}</p>
           <div className="hero-actions">

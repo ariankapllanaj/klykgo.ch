@@ -419,11 +419,12 @@ main {
 }
 
 .intro-section {
-  min-height: 920px;
+  min-height: auto;
   display: grid;
   grid-template-columns: 0.8fr 2fr 0.7fr;
   gap: 6vw;
   align-items: start;
+  padding-bottom: 90px;
 }
 
 .intro-copy {
