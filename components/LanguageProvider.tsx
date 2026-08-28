@@ -97,7 +97,7 @@ const de = {
     label: "05 / ABOS",
     eyebrow: "Kontinuierliche Betreuung.",
     title: "Wählen Sie Ihr Tempo.",
-    description: "Die Preise und finalen Leistungsumfänge werden vor dem Launch ergänzt. Registrierung und Bezahlung folgen in Phase 2.",
+    description: "Die Preise und finalen Leistungsumfänge werden vor dem Launch ergänzt. Login und Registrierung sind vorbereitet. Abonnements und Bezahlung folgen als nächster Backend-Schritt.",
     recommended: "EMPFOHLEN",
     perMonth: "/ Monat",
     choose: "wählen"
@@ -142,10 +142,36 @@ const de = {
     error: "Das hat nicht funktioniert. Bitte versuchen Sie es erneut.",
     missing: "Formspree-ID fehlt noch. Siehe .env.example im Projekt."
   },
+  auth: {
+    kicker: "Kundenbereich",
+    tabsLabel: "Login oder Registrierung",
+    login: "Login",
+    register: "Registrieren",
+    loginTitle: "Willkommen zurück.",
+    registerTitle: "Konto erstellen.",
+    loginCopy: "Melden Sie sich mit Ihrer E-Mail-Adresse und Ihrem Passwort an.",
+    registerCopy: "Erstellen Sie Ihr KLYKGO-Konto. Die Abonnements verbinden wir im nächsten Schritt.",
+    email: "E-Mail",
+    password: "Passwort",
+    confirmPassword: "Passwort bestätigen",
+    loginAction: "Einloggen",
+    registerAction: "Konto erstellen",
+    logout: "Ausloggen",
+    account: "Konto",
+    signedIn: "Sie sind eingeloggt.",
+    loading: "...",
+    working: "Bitte warten...",
+    checkEmail: "Konto erstellt. Bitte bestätigen Sie Ihre E-Mail über den Link in Ihrem Postfach.",
+    registered: "Konto erfolgreich erstellt.",
+    passwordMismatch: "Die Passwörter stimmen nicht überein.",
+    genericError: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    notConfigured: "Supabase ist noch nicht verbunden. Ergänzen Sie NEXT_PUBLIC_SUPABASE_URL und NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY in .env.local.",
+    close: "Schliessen"
+  },
   phase2: {
     kicker: "Phase 02",
-    title: "Kundenportal kommt im Backend-Ausbau.",
-    copy: "Registrierung, Login, Abonnements, Stripe-Zahlungen und das Kunden-Dashboard werden in Phase 2 aktiviert.",
+    title: "Abonnements kommen als nächster Backend-Schritt.",
+    copy: "Login und Registrierung sind bereits vorbereitet. Stripe-Zahlungen, Abonnements und das Kunden-Dashboard werden als Nächstes verbunden.",
     button: "Vorerst anfragen",
     close: "Schliessen"
   },
@@ -255,7 +281,7 @@ const en: Dictionary = {
   },
   pricing: {
     label: "05 / PLANS", eyebrow: "Ongoing support.", title: "Choose your pace.",
-    description: "Final pricing and deliverables will be added before launch. Registration and payments will be activated in Phase 2.",
+    description: "Final pricing and deliverables will be added before launch. Login and registration are prepared. Subscriptions and payments are the next backend step.",
     recommended: "RECOMMENDED", perMonth: "/ month", choose: "choose"
   },
   plans: [
@@ -275,9 +301,35 @@ const en: Dictionary = {
     privacyBefore: "I agree to the processing of my details in order to handle my enquiry and I have read the", privacyLink: "Privacy Policy", privacyAfter: ".",
     send: "Send enquiry", sending: "Sending...", success: "Thank you. Your enquiry has been sent.", error: "Something went wrong. Please try again.", missing: "The Formspree ID is still missing. See .env.example in the project."
   },
+  auth: {
+    kicker: "Client Area",
+    tabsLabel: "Login or registration",
+    login: "Login",
+    register: "Register",
+    loginTitle: "Welcome back.",
+    registerTitle: "Create your account.",
+    loginCopy: "Sign in with your email address and password.",
+    registerCopy: "Create your KLYKGO account. We will connect subscriptions in the next step.",
+    email: "Email",
+    password: "Password",
+    confirmPassword: "Confirm password",
+    loginAction: "Log in",
+    registerAction: "Create account",
+    logout: "Log out",
+    account: "Account",
+    signedIn: "You are signed in.",
+    loading: "...",
+    working: "Please wait...",
+    checkEmail: "Account created. Please confirm your email using the link in your inbox.",
+    registered: "Account created successfully.",
+    passwordMismatch: "The passwords do not match.",
+    genericError: "Something went wrong. Please try again.",
+    notConfigured: "Supabase is not connected yet. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY to .env.local.",
+    close: "Close"
+  },
   phase2: {
-    kicker: "Phase 02", title: "The client portal is coming with the backend build.",
-    copy: "Registration, login, subscriptions, Stripe payments and the client dashboard will be activated in Phase 2.",
+    kicker: "Phase 02", title: "Subscriptions are the next backend step.",
+    copy: "Login and registration are already prepared. Stripe payments, subscriptions and the client dashboard will be connected next.",
     button: "Enquire for now", close: "Close"
   },
   footer: {
@@ -380,7 +432,7 @@ const fr: Dictionary = {
   },
   pricing: {
     label: "05 / ABONNEMENTS", eyebrow: "Un accompagnement continu.", title: "Choisissez votre rythme.",
-    description: "Les prix et prestations définitives seront ajoutés avant le lancement. L'inscription et les paiements seront activés en Phase 2.",
+    description: "Les prix et prestations définitives seront ajoutés avant le lancement. La connexion et l'inscription sont préparées. Les abonnements et paiements constituent la prochaine étape backend.",
     recommended: "RECOMMANDÉ", perMonth: "/ mois", choose: "choisir"
   },
   plans: [
@@ -400,9 +452,35 @@ const fr: Dictionary = {
     privacyBefore: "J'accepte le traitement de mes données afin de répondre à ma demande et j'ai lu la", privacyLink: "Politique de confidentialité", privacyAfter: ".",
     send: "Envoyer la demande", sending: "Envoi...", success: "Merci. Votre demande a bien été envoyée.", error: "Une erreur s'est produite. Veuillez réessayer.", missing: "L'identifiant Formspree manque encore. Consultez .env.example dans le projet."
   },
+  auth: {
+    kicker: "Espace client",
+    tabsLabel: "Connexion ou inscription",
+    login: "Connexion",
+    register: "S'inscrire",
+    loginTitle: "Bon retour.",
+    registerTitle: "Créer votre compte.",
+    loginCopy: "Connectez-vous avec votre adresse e-mail et votre mot de passe.",
+    registerCopy: "Créez votre compte KLYKGO. Nous connecterons les abonnements à l'étape suivante.",
+    email: "E-mail",
+    password: "Mot de passe",
+    confirmPassword: "Confirmer le mot de passe",
+    loginAction: "Se connecter",
+    registerAction: "Créer le compte",
+    logout: "Se déconnecter",
+    account: "Compte",
+    signedIn: "Vous êtes connecté.",
+    loading: "...",
+    working: "Veuillez patienter...",
+    checkEmail: "Compte créé. Veuillez confirmer votre e-mail via le lien reçu dans votre boîte de réception.",
+    registered: "Compte créé avec succès.",
+    passwordMismatch: "Les mots de passe ne correspondent pas.",
+    genericError: "Une erreur s'est produite. Veuillez réessayer.",
+    notConfigured: "Supabase n'est pas encore connecté. Ajoutez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY dans .env.local.",
+    close: "Fermer"
+  },
   phase2: {
-    kicker: "Phase 02", title: "Le portail client arrivera avec le développement backend.",
-    copy: "L'inscription, la connexion, les abonnements, les paiements Stripe et le tableau de bord client seront activés en Phase 2.",
+    kicker: "Phase 02", title: "Les abonnements sont la prochaine étape backend.",
+    copy: "La connexion et l'inscription sont déjà préparées. Les paiements Stripe, abonnements et le tableau de bord client seront connectés ensuite.",
     button: "Faire une demande", close: "Fermer"
   },
   footer: {

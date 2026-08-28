@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
+import AuthButton from "./AuthButton";
 import { useLanguage } from "./LanguageProvider";
 
 export default function MobileMenu() {
@@ -77,9 +78,12 @@ export default function MobileMenu() {
                 </a>
               ))}
             </nav>
-            <a className="button button-solid mobile-cta" href="#kontakt" onClick={closeMenu}>
-              {t.nav.startProject} <span>↗</span>
-            </a>
+            <div className="mobile-menu-actions">
+              <AuthButton className="button button-outline mobile-auth-button" onBeforeOpen={closeMenu} />
+              <a className="button button-solid mobile-cta" href="#kontakt" onClick={closeMenu}>
+                {t.nav.startProject} <span>↗</span>
+              </a>
+            </div>
           </div>
         </div>,
         document.body

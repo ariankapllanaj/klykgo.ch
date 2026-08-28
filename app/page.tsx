@@ -6,6 +6,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import LegalFooter from "@/components/LegalFooter";
 import MobileMenu from "@/components/MobileMenu";
 import PhaseTwoButton from "@/components/PhaseTwoButton";
+import AuthButton from "@/components/AuthButton";
 import ScrollTextEffects from "@/components/ScrollTextEffects";
 import { useLanguage } from "@/components/LanguageProvider";
 
@@ -34,7 +35,7 @@ export default function Home() {
 
         <div className="nav-actions">
           <LanguageSwitcher compact />
-          <PhaseTwoButton className="login-link">{t.nav.login}</PhaseTwoButton>
+          <AuthButton className="login-link" />
           <a className="button button-outline nav-cta" href="#kontakt">
             {t.nav.startProject} <span>↗</span>
           </a>

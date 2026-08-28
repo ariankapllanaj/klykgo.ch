@@ -79,3 +79,27 @@ The Phase 1 frontend includes German, English and French with a DE / EN / FR swi
 ## GitHub Pages deployment
 
 This package is prepared for GitHub Pages. See `GITHUB-PAGES.md` for the short deployment instructions. The included GitHub Actions workflow automatically builds and publishes the static Next.js export on every push to `main`.
+
+## Backend step 01: Supabase authentication
+
+This build adds email/password registration, login, session persistence and logout with Supabase Auth. Stripe and subscriptions are intentionally not connected yet so authentication can be tested independently.
+
+1. Create a Supabase project.
+2. Copy `.env.example` to `.env.local`.
+3. Add your Supabase Project URL and public anon key:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_YOUR_KEY
+```
+
+4. Install dependencies and run locally:
+
+```bash
+npm install
+npm run dev
+```
+
+5. Open the site and use `Login` in the top navigation. Registration and login are handled by Supabase. If email confirmation is enabled in Supabase, confirm the email before attempting to log in.
+
+The Supabase publishable key is intended for browser use. Never place a Supabase secret key or Stripe secret key in any `NEXT_PUBLIC_` environment variable.

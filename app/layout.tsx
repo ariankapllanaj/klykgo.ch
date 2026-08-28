@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import { AuthProvider } from "@/components/AuthProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="de">
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider><AuthProvider>{children}</AuthProvider></LanguageProvider>
       </body>
     </html>
   );
