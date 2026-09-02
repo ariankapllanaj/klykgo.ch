@@ -2267,7 +2267,7 @@ main {
 
 .auth-modal {
   position: relative;
-  width: min(520px, 100%);
+  width: min(600px, 100%);
   max-height: min(760px, calc(100svh - 48px));
   overflow-y: auto;
   padding: clamp(30px, 5vw, 50px);
@@ -2425,9 +2425,180 @@ button:disabled {
   opacity: .55;
 }
 
+
+
+/* Backend step 01B: social authentication */
+.auth-provider-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.auth-provider-button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px 1fr 18px;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 0 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.018);
+  color: #efefef;
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .015em;
+  cursor: pointer;
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    color 220ms ease,
+    transform 220ms cubic-bezier(.2,.8,.2,1);
+}
+
+.auth-provider-button:hover:not(:disabled) {
+  border-color: rgba(255,255,255,.62);
+  background: #f2f2f2;
+  color: #090909;
+  transform: translateY(-2px);
+}
+
+.auth-provider-button:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 3px;
+}
+
+.auth-provider-arrow {
+  justify-self: end;
+  color: #747474;
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.auth-provider-button:hover:not(:disabled) .auth-provider-arrow {
+  color: #090909;
+  transform: translate(2px, -2px);
+}
+
+.provider-mark {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.18);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.02em;
+  transition: border-color 220ms ease, background 220ms ease;
+}
+
+.auth-provider-button:hover:not(:disabled) .provider-mark {
+  border-color: rgba(0,0,0,.22);
+}
+
+.provider-mark-google {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.provider-mark-yahoo {
+  font-size: 10px;
+  letter-spacing: -.08em;
+}
+
+.provider-mark-apple {
+  position: relative;
+  font-size: 0;
+}
+
+.provider-mark-apple::before {
+  content: "";
+  width: 11px;
+  height: 13px;
+  border-radius: 55% 55% 48% 48% / 58% 58% 43% 43%;
+  background: currentColor;
+  transform: translateY(1px);
+}
+
+.provider-mark-apple::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 3px;
+  top: 3px;
+  left: 12px;
+  border-radius: 100% 0 100% 0;
+  background: currentColor;
+  transform: rotate(-35deg);
+}
+
+.provider-mark-microsoft {
+  grid-template-columns: repeat(2, 5px);
+  grid-template-rows: repeat(2, 5px);
+  gap: 2px;
+}
+
+.provider-mark-microsoft i {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: currentColor;
+}
+
+.auth-provider-note {
+  margin: 12px 0 0;
+  color: #606060;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.auth-divider {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 25px 0 22px;
+  color: #666;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.auth-divider::before {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 1px;
+  background: rgba(255,255,255,.1);
+}
+
+.auth-divider span {
+  position: relative;
+  z-index: 1;
+  padding: 0 12px;
+  background: #0a0a0a;
+}
+
+.auth-legal-copy {
+  margin: 16px 0 0;
+  color: #5f5f5f;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
 @media (max-width: 600px) {
   .auth-modal {
     max-height: calc(100svh - 24px);
     padding: 34px 24px 28px;
+  }
+
+  .auth-provider-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-provider-button {
+    min-height: 52px;
   }
 }
