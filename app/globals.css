@@ -1024,7 +1024,7 @@ main {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .desktop-nav,
   .nav-actions {
     display: none;
@@ -2223,7 +2223,7 @@ main {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .mobile-menu-language {
     display: flex;
     align-items: center;
@@ -2267,7 +2267,7 @@ main {
 
 .auth-modal {
   position: relative;
-  width: min(600px, 100%);
+  width: min(520px, 100%);
   max-height: min(760px, calc(100svh - 48px));
   overflow-y: auto;
   padding: clamp(30px, 5vw, 50px);
@@ -2381,6 +2381,48 @@ main {
   box-shadow: 0 1px 0 rgba(255,255,255,.2);
 }
 
+.password-requirements {
+  display: grid;
+  gap: 7px;
+  margin-top: 2px;
+}
+
+.password-requirement {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #686868;
+  transition: color 180ms ease;
+}
+
+.password-requirement.valid {
+  color: #d6d6d6;
+}
+
+.password-requirement-dot {
+  display: grid;
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  place-items: center;
+  border: 1px solid #555;
+  border-radius: 50%;
+  color: #050505;
+  font-size: 9px;
+  line-height: 1;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.password-requirement.valid .password-requirement-dot {
+  border-color: white;
+  background: white;
+}
+
+.password-requirement small {
+  font-size: 11px;
+  line-height: 1.3;
+}
+
 .auth-message,
 .auth-config-note {
   margin: 0;
@@ -2399,6 +2441,20 @@ main {
 .auth-message.error {
   border-color: rgba(255,255,255,.18);
   color: #c7c7c7;
+}
+
+.auth-reset-link {
+  margin-top: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #999;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.auth-reset-link:hover {
+  color: white;
 }
 
 .auth-config-note {
@@ -2427,160 +2483,7 @@ button:disabled {
 
 
 
-/* Backend step 01B: social authentication */
-.auth-provider-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.auth-provider-button {
-  position: relative;
-  display: grid;
-  grid-template-columns: 28px 1fr 18px;
-  align-items: center;
-  gap: 12px;
-  min-height: 54px;
-  padding: 0 16px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.018);
-  color: #efefef;
-  text-align: left;
-  font: inherit;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: .015em;
-  cursor: pointer;
-  transition:
-    border-color 220ms ease,
-    background 220ms ease,
-    color 220ms ease,
-    transform 220ms cubic-bezier(.2,.8,.2,1);
-}
-
-.auth-provider-button:hover:not(:disabled) {
-  border-color: rgba(255,255,255,.62);
-  background: #f2f2f2;
-  color: #090909;
-  transform: translateY(-2px);
-}
-
-.auth-provider-button:focus-visible {
-  outline: 1px solid white;
-  outline-offset: 3px;
-}
-
-.auth-provider-arrow {
-  justify-self: end;
-  color: #747474;
-  transition: transform 220ms ease, color 220ms ease;
-}
-
-.auth-provider-button:hover:not(:disabled) .auth-provider-arrow {
-  color: #090909;
-  transform: translate(2px, -2px);
-}
-
-.provider-mark {
-  width: 24px;
-  height: 24px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.18);
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -.02em;
-  transition: border-color 220ms ease, background 220ms ease;
-}
-
-.auth-provider-button:hover:not(:disabled) .provider-mark {
-  border-color: rgba(0,0,0,.22);
-}
-
-.provider-mark-google {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.provider-mark-yahoo {
-  font-size: 10px;
-  letter-spacing: -.08em;
-}
-
-.provider-mark-apple {
-  position: relative;
-  font-size: 0;
-}
-
-.provider-mark-apple::before {
-  content: "";
-  width: 11px;
-  height: 13px;
-  border-radius: 55% 55% 48% 48% / 58% 58% 43% 43%;
-  background: currentColor;
-  transform: translateY(1px);
-}
-
-.provider-mark-apple::after {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 3px;
-  top: 3px;
-  left: 12px;
-  border-radius: 100% 0 100% 0;
-  background: currentColor;
-  transform: rotate(-35deg);
-}
-
-.provider-mark-microsoft {
-  grid-template-columns: repeat(2, 5px);
-  grid-template-rows: repeat(2, 5px);
-  gap: 2px;
-}
-
-.provider-mark-microsoft i {
-  display: block;
-  width: 5px;
-  height: 5px;
-  background: currentColor;
-}
-
-.auth-provider-note {
-  margin: 12px 0 0;
-  color: #606060;
-  font-size: 10px;
-  line-height: 1.55;
-}
-
-.auth-divider {
-  position: relative;
-  display: grid;
-  place-items: center;
-  margin: 25px 0 22px;
-  color: #666;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-
-.auth-divider::before {
-  content: "";
-  position: absolute;
-  inset: 50% 0 auto;
-  height: 1px;
-  background: rgba(255,255,255,.1);
-}
-
-.auth-divider span {
-  position: relative;
-  z-index: 1;
-  padding: 0 12px;
-  background: #0a0a0a;
-}
-
+/* Email authentication */
 .auth-legal-copy {
   margin: 16px 0 0;
   color: #5f5f5f;
@@ -2588,17 +2491,55 @@ button:disabled {
   line-height: 1.6;
 }
 
+.account-page { min-height: 100svh; background: radial-gradient(circle at 78% 8%, rgba(255,255,255,.07), transparent 28%), #050505; }
+.account-header { height: 78px; padding: 0 clamp(22px, 4vw, 64px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.1); }
+.account-back { min-height: 42px; display: inline-flex; align-items: center; padding: 0 18px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; color: white; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; transition: background 220ms ease, border-color 220ms ease, transform 220ms ease; }
+.account-back:hover { border-color: white; background: rgba(255,255,255,.08); transform: translateY(-1px); }
+.account-content { width: min(980px, calc(100% - 44px)); margin: 0 auto; padding: 110px 0 120px; }
+.account-content h1 { max-width: 700px; margin: 0; font-size: clamp(54px, 8vw, 112px); line-height: .88; font-weight: 500; letter-spacing: -.07em; }
+.account-intro { max-width: 470px; margin: 28px 0 60px; color: #929292; line-height: 1.7; }
+.account-status { margin-bottom: 28px; }
+.account-section { display: grid; grid-template-columns: 90px 1fr; gap: 30px; padding: 42px 0; border-top: 1px solid var(--line); }
+.account-section-label { margin: 3px 0 0; color: #707070; font-size: 11px; letter-spacing: .16em; }
+.account-section h2 { margin: 0 0 30px; font-size: 26px; font-weight: 500; letter-spacing: -.04em; }
+.account-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.account-form label { display: grid; gap: 9px; }
+.account-form label > span { color: #888; font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.account-form input { width: 100%; min-height: 48px; padding: 0; border: 0; border-bottom: 1px solid var(--line-strong); outline: 0; background: transparent; color: white; }
+.account-form input:focus { border-color: white; }
+.account-form input[readonly] { color: #777; }
+.account-full-field, .account-form button { grid-column: 1 / -1; }
+.account-form button { justify-self: start; min-width: 190px; }
+.account-security-row { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+.account-security-row p { margin: 0 0 7px; }
+.account-security-row span, .account-muted { color: #777; font-size: 12px; }
+.account-security-row .button { flex: 0 0 auto; }
+.account-logout { min-height: 48px; margin-top: 38px; padding: 0 24px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; background: transparent; color: white; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: background 220ms ease, border-color 220ms ease, transform 220ms ease; }
+.account-logout:hover { border-color: white; background: rgba(255,255,255,.08); transform: translateY(-1px); }
+.account-loading { padding: 120px 22px; text-align: center; color: #888; }
+.reset-content { width: min(560px, calc(100% - 44px)); margin: 0 auto; padding: 140px 0 120px; }
+.reset-content h1 { margin: 0; font-size: clamp(48px, 7vw, 88px); line-height: .9; font-weight: 500; letter-spacing: -.065em; }
+.reset-form { grid-template-columns: 1fr; margin-top: 36px; }
+.reset-form button { grid-column: auto; width: 100%; }
+.reset-back-link { display: inline-block; margin-top: 24px; color: #888; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.reset-back-link:hover { color: white; }
+
 @media (max-width: 600px) {
   .auth-modal {
     max-height: calc(100svh - 24px);
     padding: 34px 24px 28px;
   }
 
-  .auth-provider-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .auth-provider-button {
-    min-height: 52px;
-  }
+  .account-header { height: 68px; }
+  .account-header .brand { font-size: 15px; }
+  .account-back { min-height: 38px; padding: 0 13px; font-size: 9px; }
+  .account-content { padding: 78px 0 80px; }
+  .account-content h1 { font-size: clamp(52px, 16vw, 78px); }
+  .account-section { grid-template-columns: 1fr; gap: 18px; padding: 32px 0; }
+  .account-section-label { margin: 0; }
+  .account-form { grid-template-columns: 1fr; }
+  .account-full-field, .account-form button { grid-column: auto; }
+  .account-form button, .account-security-row .button { width: 100%; }
+  .account-security-row { align-items: flex-start; flex-direction: column; }
 }
+

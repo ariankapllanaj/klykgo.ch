@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useAuth } from "./AuthProvider";
 import { useLanguage } from "./LanguageProvider";
 
@@ -12,9 +13,14 @@ export default function AuthButton({
 }) {
   const { user, loading, openAuth } = useAuth();
   const { t } = useLanguage();
+  const router = useRouter();
 
   const handleClick = () => {
     onBeforeOpen?.();
+    if (user) {
+      router.push("/account/");
+      return;
+    }
     window.setTimeout(() => openAuth("login"), 0);
   };
 

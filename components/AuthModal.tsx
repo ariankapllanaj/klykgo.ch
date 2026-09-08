@@ -6,7 +6,6 @@ import { getSupabaseBrowserClient } from "@/lib/supabase";
 import { useLanguage } from "./LanguageProvider";
 
 type AuthMode = "login" | "register";
-type SocialProvider = "google" | "azure" | "apple" | "custom:yahoo";
 
 type Props = {
   open: boolean;
@@ -24,24 +23,8 @@ function getAuthReturnUrl() {
   return `${window.location.origin}${basePath}/`;
 }
 
-function ProviderMark({ provider }: { provider: SocialProvider }) {
-  if (provider === "azure") {
-    return (
-      <span className="provider-mark provider-mark-microsoft" aria-hidden="true">
-        <i /><i /><i /><i />
-      </span>
-    );
-  }
-
-  if (provider === "apple") {
-    return <span className="provider-mark provider-mark-apple" aria-hidden="true">●</span>;
-  }
-
-  if (provider === "custom:yahoo") {
-    return <span className="provider-mark provider-mark-yahoo" aria-hidden="true">Y!</span>;
-  }
-
-  return <span className="provider-mark provider-mark-google" aria-hidden="true">G</span>;
+function isStrongPassword(value: string) {
+  return value.length >= 8 && /[a-z]/.test(value) && /[A-Z]/.test(value) && /\d/.test(value) && /[^A-Za-z0-9]/.test(value);
 }
 
 export default function AuthModal({ open, mode, setMode, onClose, user, configured, signOut }: Props) {
@@ -49,8 +32,11 @@ export default function AuthModal({ open, mode, setMode, onClose, user, configur
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [resetMode, setResetMode] = useState(false);
+  const [mfaFactorId, setMfaFactorId] = useState<string | null>(null);
+  const [mfaChallengeId, setMfaChallengeId] = useState<string | null>(null);
+  const [mfaCode, setMfaCode] = useState("");
   const [busy, setBusy] = useState(false);
-  const [socialBusy, setSocialBusy] = useState<SocialProvider | null>(null);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
@@ -76,6 +62,10 @@ export default function AuthModal({ open, mode, setMode, onClose, user, configur
     setError("");
     setPassword("");
     setConfirmPassword("");
+    setResetMode(false);
+    setMfaFactorId(null);
+    setMfaChallengeId(null);
+    setMfaCode("");
   }, [mode]);
 
   if (!open) return null;
@@ -90,8 +80,13 @@ export default function AuthModal({ open, mode, setMode, onClose, user, configur
       return;
     }
 
-    if (mode === "register" && password !== confirmPassword) {
+    if (!resetMode && mode === "register" && password !== confirmPassword) {
       setError(t.auth.passwordMismatch);
+      return;
+    }
+
+    if (!resetMode && mode === "register" && !isStrongPassword(password)) {
+      setError(t.auth.passwordStrength);
       return;
     }
 
@@ -104,10 +99,29 @@ export default function AuthModal({ open, mode, setMode, onClose, user, configur
     setBusy(true);
 
     try {
-      if (mode === "login") {
+      if (resetMode) {
+        const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
+          redirectTo: `${getAuthReturnUrl()}reset-password/`
+        });
+        if (resetError) throw resetError;
+        setMessage(t.auth.resetSent);
+      } else if (mode === "login") {
         const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
         if (signInError) throw signInError;
-        onClose();
+        const { data: factors, error: factorError } = await supabase.auth.mfa.listFactors();
+        if (factorError) throw factorError;
+        const factor = factors.totp.find((item) => item.status === "verified");
+
+        if (factor) {
+          const { data: challenge, error: challengeError } = await supabase.auth.mfa.challenge({ factorId: factor.id });
+          if (challengeError) throw challengeError;
+          setMfaFactorId(factor.id);
+          setMfaChallengeId(challenge.id);
+          setPassword("");
+          setMessage(t.auth.mfaSent);
+        } else {
+          onClose();
+        }
       } else {
         const { data, error: signUpError } = await supabase.auth.signUp({
           email,
@@ -133,12 +147,19 @@ export default function AuthModal({ open, mode, setMode, onClose, user, configur
     }
   };
 
-  const signInWithProvider = async (provider: SocialProvider) => {
-    setMessage("");
-    setError("");
+  const handleSignOut = async () => {
+    setBusy(true);
+    await signOut();
+    setBusy(false);
+    onClose();
+  };
 
-    if (!configured) {
-      setError(t.auth.notConfigured);
+  const verifyMfa = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setError("");
+    setMessage("");
+    if (!mfaFactorId || !mfaChallengeId || mfaCode.length !== 6) {
+      setError(t.auth.mfaInvalid);
       return;
     }
 
@@ -148,90 +169,83 @@ export default function AuthModal({ open, mode, setMode, onClose, user, configur
       return;
     }
 
-    setSocialBusy(provider);
-
-    try {
-      const { error: providerError } = await supabase.auth.signInWithOAuth({
-        provider: provider as any,
-        options: {
-          redirectTo: getAuthReturnUrl(),
-          ...(provider === "azure" ? { scopes: "email" } : {})
-        }
-      });
-
-      if (providerError) throw providerError;
-    } catch (caught) {
-      const raw = caught instanceof Error ? caught.message : t.auth.socialError;
-      const text = raw.toLowerCase().includes("provider") || raw.toLowerCase().includes("unsupported")
-        ? t.auth.providerNotEnabled
-        : raw;
-      setError(text);
-      setSocialBusy(null);
-    }
-  };
-
-  const handleSignOut = async () => {
     setBusy(true);
-    await signOut();
+    const { error: verifyError } = await supabase.auth.mfa.verify({
+      factorId: mfaFactorId,
+      challengeId: mfaChallengeId,
+      code: mfaCode
+    });
     setBusy(false);
+
+    if (verifyError) {
+      setError(verifyError.message);
+      return;
+    }
+
+    setMfaFactorId(null);
+    setMfaChallengeId(null);
+    setMfaCode("");
     onClose();
   };
 
-  const providerButtons: Array<{ provider: SocialProvider; label: string }> = [
-    { provider: "google", label: t.auth.continueGoogle },
-    { provider: "azure", label: t.auth.continueMicrosoft },
-    { provider: "apple", label: t.auth.continueApple },
-    { provider: "custom:yahoo", label: t.auth.continueYahoo }
-  ];
+  const cancelMfa = async () => {
+    await signOut();
+    setMfaFactorId(null);
+    setMfaChallengeId(null);
+    setMfaCode("");
+    setError("");
+    setMessage("");
+  };
 
-  const isBusy = busy || socialBusy !== null;
+  const passwordRequirements = [
+    { label: t.auth.passwordRequirementLength, valid: password.length >= 8 },
+    { label: t.auth.passwordRequirementLowercase, valid: /[a-z]/.test(password) },
+    { label: t.auth.passwordRequirementUppercase, valid: /[A-Z]/.test(password) },
+    { label: t.auth.passwordRequirementNumber, valid: /\d/.test(password) },
+    { label: t.auth.passwordRequirementSpecial, valid: /[^A-Za-z0-9]/.test(password) }
+  ];
 
   return (
     <div className="modal-backdrop auth-backdrop" role="presentation" onMouseDown={onClose}>
       <div className="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title" onMouseDown={(event) => event.stopPropagation()}>
         <button className="modal-close" type="button" aria-label={t.auth.close} onClick={onClose}>×</button>
 
-        {user ? (
+        {mfaFactorId && mfaChallengeId ? (
+          <>
+            <p className="eyebrow">{t.auth.mfaTitle}</p>
+            <h3 id="auth-title">{t.auth.mfaHeading}</h3>
+            <p className="auth-intro">{t.auth.mfaCopy}</p>
+            <form className="auth-form" onSubmit={verifyMfa}>
+              <label>
+                <span>{t.auth.mfaCode}</span>
+                <input inputMode="numeric" pattern="[0-9]{6}" autoComplete="one-time-code" maxLength={6} value={mfaCode} onChange={(event) => setMfaCode(event.target.value.replace(/\D/g, ""))} required />
+              </label>
+              {error && <p className="auth-message error" role="alert">{error}</p>}
+              <button className="button button-solid full-button" type="submit" disabled={busy}>
+                {busy ? t.auth.working : t.auth.mfaVerify}<span>↗</span>
+              </button>
+            </form>
+            <button className="auth-reset-link" type="button" onClick={cancelMfa}>{t.auth.mfaCancel}</button>
+          </>
+        ) : user ? (
           <div className="auth-account-state">
             <p className="eyebrow">{t.auth.account}</p>
             <h3 id="auth-title">{t.auth.signedIn}</h3>
             <p className="auth-email">{user.email}</p>
-            <button className="button button-outline full-button" type="button" onClick={handleSignOut} disabled={isBusy}>
+            <button className="button button-outline full-button" type="button" onClick={handleSignOut} disabled={busy}>
               {busy ? t.auth.working : t.auth.logout}
             </button>
           </div>
         ) : (
           <>
             <p className="eyebrow">{t.auth.kicker}</p>
-            <h3 id="auth-title">{mode === "login" ? t.auth.loginTitle : t.auth.registerTitle}</h3>
-            <p className="auth-intro">{mode === "login" ? t.auth.loginCopy : t.auth.registerCopy}</p>
+            <h3 id="auth-title">{resetMode ? t.auth.resetTitle : mode === "login" ? t.auth.loginTitle : t.auth.registerTitle}</h3>
+            <p className="auth-intro">{resetMode ? t.auth.resetCopy : mode === "login" ? t.auth.loginCopy : t.auth.registerCopy}</p>
 
-            <div className="auth-tabs" role="tablist" aria-label={t.auth.tabsLabel}>
+            {!resetMode && <div className="auth-tabs" role="tablist" aria-label={t.auth.tabsLabel}>
               <button className={mode === "login" ? "active" : ""} type="button" onClick={() => setMode("login")}>{t.auth.login}</button>
               <button className={mode === "register" ? "active" : ""} type="button" onClick={() => setMode("register")}>{t.auth.register}</button>
-            </div>
-
-            <div className="auth-provider-grid" aria-label={t.auth.socialLabel}>
-              {providerButtons.map(({ provider, label }) => (
-                <button
-                  key={provider}
-                  className="auth-provider-button"
-                  type="button"
-                  onClick={() => signInWithProvider(provider)}
-                  disabled={isBusy}
-                >
-                  <ProviderMark provider={provider} />
-                  <span>{socialBusy === provider ? t.auth.redirecting : label}</span>
-                  <span className="auth-provider-arrow" aria-hidden="true">↗</span>
-                </button>
-              ))}
-            </div>
-
-            <p className="auth-provider-note">{t.auth.providerNote}</p>
-
-            <div className="auth-divider" aria-hidden="true">
-              <span>{t.auth.orEmail}</span>
-            </div>
+            </div>}
 
             <form className="auth-form" onSubmit={submit}>
               <label>
@@ -239,12 +253,20 @@ export default function AuthModal({ open, mode, setMode, onClose, user, configur
                 <input type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="name@firma.ch" required />
               </label>
 
-              <label>
+              {!resetMode && <label>
                 <span>{t.auth.password}</span>
-                <input type="password" autoComplete={mode === "login" ? "current-password" : "new-password"} minLength={6} value={password} onChange={(event) => setPassword(event.target.value)} required />
-              </label>
+                <input type="password" autoComplete={mode === "login" ? "current-password" : "new-password"} minLength={mode === "register" ? 8 : 6} pattern={mode === "register" ? "(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z0-9]).{8,}" : undefined} title={mode === "register" ? t.auth.passwordStrength : undefined} value={password} onChange={(event) => setPassword(event.target.value)} required />
+                {mode === "register" && <div className="password-requirements" aria-label={t.auth.passwordStrength}>
+                  {passwordRequirements.map((requirement) => (
+                    <div className={`password-requirement${requirement.valid ? " valid" : ""}`} key={requirement.label}>
+                      <span className="password-requirement-dot" aria-hidden="true">{requirement.valid ? "✓" : ""}</span>
+                      <small>{requirement.label}</small>
+                    </div>
+                  ))}
+                </div>}
+              </label>}
 
-              {mode === "register" && (
+              {!resetMode && mode === "register" && (
                 <label>
                   <span>{t.auth.confirmPassword}</span>
                   <input type="password" autoComplete="new-password" minLength={6} value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
@@ -254,13 +276,15 @@ export default function AuthModal({ open, mode, setMode, onClose, user, configur
               {error && <p className="auth-message error" role="alert">{error}</p>}
               {message && <p className="auth-message success" role="status">{message}</p>}
 
-              <button className="button button-solid full-button" type="submit" disabled={isBusy}>
-                {busy ? t.auth.working : mode === "login" ? t.auth.loginAction : t.auth.registerAction}
+              <button className="button button-solid full-button" type="submit" disabled={busy}>
+                {busy ? t.auth.working : resetMode ? t.auth.resetAction : mode === "login" ? t.auth.loginAction : t.auth.registerAction}
                 <span>↗</span>
               </button>
             </form>
 
-            {mode === "register" && <p className="auth-legal-copy">{t.auth.legalCopy}</p>}
+            {mode === "login" && !resetMode && <button className="auth-reset-link" type="button" onClick={() => { setResetMode(true); setMessage(""); setError(""); }}>{t.auth.forgotPassword}</button>}
+            {resetMode && <button className="auth-reset-link" type="button" onClick={() => { setResetMode(false); setMessage(""); setError(""); }}>{t.auth.backToLogin}</button>}
+            {mode === "register" && !resetMode && <p className="auth-legal-copy">{t.auth.legalCopy}</p>}
             {!configured && <p className="auth-config-note">{t.auth.notConfigured}</p>}
           </>
         )}
