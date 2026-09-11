@@ -9,13 +9,38 @@ import { useLanguage } from "./LanguageProvider";
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
+  const menuCopy = {
+    de: {
+      services: "Leistungen",
+      process: "Ablauf",
+      subscriptions: "Abos",
+      contact: "Kontakt",
+      startProject: "Projekt starten"
+    },
+    en: {
+      services: "Services",
+      process: "Process",
+      subscriptions: "Plans",
+      contact: "Contact",
+      startProject: "Start a project"
+    },
+    fr: {
+      services: "Services",
+      process: "Processus",
+      subscriptions: "Abonnements",
+      contact: "Contact",
+      startProject: "Démarrer un projet"
+    }
+  } as const;
+
+  const copy = menuCopy[language];
   const links = [
-    [t.nav.services, "#leistungen"],
-    [t.nav.process, "#ablauf"],
-    [t.nav.subscriptions, "#abos"],
-    [t.nav.contact, "#kontakt"]
+    [copy.services, "#leistungen"],
+    [copy.process, "#ablauf"],
+    [copy.subscriptions, "#abos"],
+    [copy.contact, "#kontakt"]
   ] as const;
 
   useEffect(() => setMounted(true), []);
@@ -57,7 +82,7 @@ export default function MobileMenu() {
         <div className="mobile-menu is-open" role="dialog" aria-modal="true" aria-label={t.nav.navigation}>
           <div className="mobile-menu-top">
             <a href="#home" className="mobile-menu-brand" onClick={closeMenu} aria-label={t.nav.homeLabel}>
-              <span className="brand-mini-symbol" aria-hidden="true"><i /><i /><i /></span>
+              <img src="/klykgo-logo-mark.jpg" alt="" className="brand-mini-image" aria-hidden="true" />
               <span>KLYKGO</span>
             </a>
             <button className="mobile-menu-close" type="button" aria-label={t.nav.closeMenu} onClick={closeMenu}>
@@ -81,7 +106,7 @@ export default function MobileMenu() {
             <div className="mobile-menu-actions">
               <AuthButton className="button button-outline mobile-auth-button" onBeforeOpen={closeMenu} />
               <a className="button button-solid mobile-cta" href="#kontakt" onClick={closeMenu}>
-                {t.nav.startProject} <span>↗</span>
+                {copy.startProject} <span>↗</span>
               </a>
             </div>
           </div>

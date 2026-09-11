@@ -18,11 +18,7 @@ export default function Home() {
       <ScrollTextEffects />
       <header className="topbar">
         <a href="#home" className="brand" aria-label={t.nav.homeLabel}>
-          <span className="brand-mini-symbol" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </span>
+          <img src="/klykgo-logo-mark.jpg" alt="" className="brand-mini-image" aria-hidden="true" />
           <span>KLYKGO</span>
         </a>
 
@@ -142,10 +138,9 @@ export default function Home() {
         <div className="pricing-grid">
           {t.plans.map((plan) => (
             <article className={`price-card ${plan.featured ? "featured" : ""}`} key={plan.name}>
-              {plan.featured && <div className="popular-label">{t.pricing.recommended}</div>}
               <div className="price-card-top">
                 <p className="plan-name">{plan.name}</p>
-                <h3>CHF XXX<span>{t.pricing.perMonth}</span></h3>
+                <h3 className="price-on-request">{t.pricing.priceOnRequest}</h3>
                 <p>{plan.subtitle}</p>
               </div>
               <ul>

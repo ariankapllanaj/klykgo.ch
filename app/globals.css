@@ -98,6 +98,16 @@ main {
 .brand-mini-symbol i:nth-child(2) { height: 18px; }
 .brand-mini-symbol i:nth-child(3) { height: 24px; }
 
+
+.brand-mini-image {
+  width: 34px;
+  height: 34px;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
 .desktop-nav {
   position: absolute;
   left: 50%;
@@ -359,6 +369,15 @@ main {
 .brand-symbol i:nth-child(1) { height: 96px; }
 .brand-symbol i:nth-child(2) { height: 138px; }
 .brand-symbol i:nth-child(3) { height: 180px; }
+
+
+.brand-symbol-image {
+  width: 168px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px rgba(255,255,255,.1));
+}
 
 .hero-end-line {
   width: 320px;
@@ -698,18 +717,6 @@ main {
   transform: translateY(-14px);
 }
 
-.popular-label {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: white;
-  color: black;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .13em;
-}
 
 .plan-name {
   margin: 0 0 36px;
@@ -731,6 +738,12 @@ main {
   color: #6d6d6d;
   font-size: 12px;
   letter-spacing: 0;
+}
+
+.price-card h3.price-on-request {
+  font-size: clamp(28px, 2.7vw, 42px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
 }
 
 .price-card-top > p:last-child {
@@ -1109,6 +1122,11 @@ main {
     font-weight: 600;
   }
 
+  .mobile-menu-brand .brand-mini-image {
+    width: 32px;
+    height: 32px;
+  }
+
   .mobile-menu-close {
     position: relative;
     width: 42px;
@@ -1379,6 +1397,10 @@ main {
   .brand-symbol i:nth-child(1) { height: 72px; }
   .brand-symbol i:nth-child(2) { height: 102px; }
   .brand-symbol i:nth-child(3) { height: 136px; }
+
+  .brand-symbol-image {
+    width: 126px;
+  }
 
   .hero-end-line {
     width: 240px;
@@ -1714,6 +1736,13 @@ main {
 
   .brand:hover .brand-mini-symbol i:nth-child(3) {
     transform: skewY(-14deg) translateY(-6px);
+  }
+
+  .brand:hover .brand-mini-image,
+  .footer-wordmark:hover .brand-mini-image,
+  .mobile-menu-brand:hover .brand-mini-image {
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.08) drop-shadow(0 0 12px rgba(255,255,255,.14));
   }
 
   .desktop-nav a:hover::after {

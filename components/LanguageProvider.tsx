@@ -97,9 +97,8 @@ const de = {
     label: "05 / ABOS",
     eyebrow: "Kontinuierliche Betreuung.",
     title: "Wählen Sie Ihr Tempo.",
-    description: "Die Preise und finalen Leistungsumfänge werden vor dem Launch ergänzt. Login und Registrierung sind vorbereitet. Abonnements und Bezahlung folgen als nächster Backend-Schritt.",
-    recommended: "EMPFOHLEN",
-    perMonth: "/ Monat",
+    description: "Alle Pakete werden individuell auf den Bedarf Ihres Unternehmens abgestimmt. Preise erhalten Sie auf Anfrage.",
+    priceOnRequest: "Preis auf Anfrage",
     choose: "wählen"
   },
   plans: [
@@ -292,8 +291,8 @@ const en: Dictionary = {
   },
   pricing: {
     label: "05 / PLANS", eyebrow: "Ongoing support.", title: "Choose your pace.",
-    description: "Final pricing and deliverables will be added before launch. Login and registration are prepared. Subscriptions and payments are the next backend step.",
-    recommended: "RECOMMENDED", perMonth: "/ month", choose: "choose"
+    description: "All packages are tailored to your business needs. Pricing is available on request.",
+    priceOnRequest: "Price on Request", choose: "choose"
   },
   plans: [
     { name: "Starter", subtitle: "The ideal starting point for small businesses and new brands.", features: ["Core marketing & consulting", "Social media support", "Graphic & content creation", "Small design adjustments", "Regular support", "KLYKGO support"] },
@@ -454,8 +453,8 @@ const fr: Dictionary = {
   },
   pricing: {
     label: "05 / ABONNEMENTS", eyebrow: "Un accompagnement continu.", title: "Choisissez votre rythme.",
-    description: "Les prix et prestations définitives seront ajoutés avant le lancement. La connexion et l'inscription sont préparées. Les abonnements et paiements constituent la prochaine étape backend.",
-    recommended: "RECOMMANDÉ", perMonth: "/ mois", choose: "choisir"
+    description: "Tous les forfaits sont adaptés aux besoins de votre entreprise. Les tarifs sont disponibles sur demande.",
+    priceOnRequest: "Prix sur demande", choose: "choisir"
   },
   plans: [
     { name: "Starter", subtitle: "Le point de départ idéal pour les petites entreprises et les nouvelles marques.", features: ["Marketing de base & conseil", "Support réseaux sociaux", "Création graphique & contenu", "Petites adaptations design", "Accompagnement régulier", "Support KLYKGO"] },
