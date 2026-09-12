@@ -82,7 +82,7 @@ export default function MobileMenu() {
         <div className="mobile-menu is-open" role="dialog" aria-modal="true" aria-label={t.nav.navigation}>
           <div className="mobile-menu-top">
             <a href="#home" className="mobile-menu-brand" onClick={closeMenu} aria-label={t.nav.homeLabel}>
-              <img src="/klykgo-logo-mark.jpg" alt="" className="brand-mini-image" aria-hidden="true" />
+              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/klykgo-logo-mark.jpg`} alt="" className="brand-mini-image" aria-hidden="true" />
               <span>KLYKGO</span>
             </a>
             <button className="mobile-menu-close" type="button" aria-label={t.nav.closeMenu} onClick={closeMenu}>

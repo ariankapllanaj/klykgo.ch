@@ -118,7 +118,7 @@ export default function HeroParallax() {
         </div>
 
         <div className="hero-end-mark" aria-hidden="true">
-          <img src="/klykgo-logo-mark.jpg" alt="" className="brand-symbol-image" aria-hidden="true" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/klykgo-logo-mark.jpg`} alt="" className="brand-symbol-image" aria-hidden="true" />
           <div className="hero-end-line" />
           <p>{t.hero.end}</p>
         </div>

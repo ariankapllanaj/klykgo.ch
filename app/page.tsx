@@ -18,7 +18,7 @@ export default function Home() {
       <ScrollTextEffects />
       <header className="topbar">
         <a href="#home" className="brand" aria-label={t.nav.homeLabel}>
-          <img src="/klykgo-logo-mark.jpg" alt="" className="brand-mini-image" aria-hidden="true" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/klykgo-logo-mark.jpg`} alt="" className="brand-mini-image" aria-hidden="true" />
           <span>KLYKGO</span>
         </a>
 

@@ -51,7 +51,7 @@ export default function LegalFooter() {
         <div className="footer-main">
           <div className="footer-identity">
             <a href="#home" className="footer-wordmark" aria-label={t.nav.homeLabel}>
-              <img src="/klykgo-logo-mark.jpg" alt="" className="brand-mini-image footer-mini-image" aria-hidden="true" />
+              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/klykgo-logo-mark.jpg`} alt="" className="brand-mini-image footer-mini-image" aria-hidden="true" />
               <span>KLYKGO</span>
             </a>
             <p>{t.footer.description}</p>
