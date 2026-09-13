@@ -55,7 +55,7 @@ export default function LegalFooter() {
               <span>KLYKGO</span>
             </a>
             <p>{t.footer.description}</p>
-            <a className="footer-contact-link" href="mailto:hello@klykgo.ch">hello@klykgo.ch <span>↗</span></a>
+            <a className="footer-contact-link" href="mailto:project@klykgo.ch">project@klykgo.ch <span>↗</span></a>
           </div>
 
           <nav className="footer-column" aria-label={t.footer.navigation}>
