@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KLYKGO</title>
+    <title>KLYKGO | Confirm your email</title>
   </head>
   <body style="margin:0;padding:0;background:#050505;color:#ffffff;font-family:Arial,Helvetica,sans-serif;">
     <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">
@@ -13,11 +13,11 @@
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background:#050505;">
       <tr>
         <td align="center" style="padding:36px 18px;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:620px;background:#0b0b0b;border:1px solid #252525;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;background:#0b0b0b;border:1px solid #252525;">
             <tr>
               <td style="padding:34px 38px 28px;border-bottom:1px solid #252525;">
                 <div style="font-size:26px;line-height:1;font-weight:600;letter-spacing:.28em;color:#ffffff;">KLYKGO</div>
-                <div style="margin-top:10px;font-size:10px;line-height:1.4;letter-spacing:.28em;color:#7d7d7d;text-transform:uppercase;">Marketing Agency · Switzerland</div>
+                <div style="margin-top:10px;font-size:10px;line-height:1.4;letter-spacing:.24em;color:#7d7d7d;text-transform:uppercase;">Marketing Agency · Switzerland</div>
               </td>
             </tr>
 
@@ -26,30 +26,48 @@
                 {{ if eq .Data.language "en" }}
                   <div style="font-size:11px;line-height:1.4;letter-spacing:.20em;color:#8c8c8c;text-transform:uppercase;">Account confirmation</div>
                   <h1 style="margin:18px 0 18px;font-size:36px;line-height:1.08;font-weight:500;letter-spacing:-.035em;color:#ffffff;">Welcome to KLYKGO.</h1>
-                  <p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#b9b9b9;">Thank you for creating your KLYKGO account. Before you can access the client area, please confirm that <strong style="color:#ffffff;font-weight:500;">{{ .Email }}</strong> belongs to you.</p>
-                  <p style="margin:0 0 30px;font-size:15px;line-height:1.75;color:#b9b9b9;">Use the button below to verify your email address and activate your account.</p>
+                  <p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#b9b9b9;">Thank you for creating your KLYKGO account.</p>
+                  <p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#b9b9b9;">Your personal client account gives you access to a secure area where you can manage your account information, security settings, and your KLYKGO services.</p>
+                  <p style="margin:0 0 30px;font-size:15px;line-height:1.75;color:#b9b9b9;">To complete your registration, please confirm that <strong style="color:#ffffff;font-weight:500;">{{ .Email }}</strong> belongs to you by using the button below.</p>
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                     <tr><td style="background:#ffffff;"><a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:16px 24px;color:#050505;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;">Confirm email address ↗</a></td></tr>
                   </table>
-                  <p style="margin:30px 0 0;font-size:12px;line-height:1.7;color:#707070;">If you did not create a KLYKGO account, you can safely ignore this email.</p>
+                  <p style="margin:30px 0 0;font-size:14px;line-height:1.75;color:#9d9d9d;">Confirming your email helps protect your account and ensures that only you can use this email address to access your KLYKGO account.</p>
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;background:#111111;border:1px solid #2a2a2a;">
+                    <tr><td style="padding:20px 22px;"><div style="font-size:11px;line-height:1.4;letter-spacing:.16em;color:#ffffff;text-transform:uppercase;">Recommended security step</div><p style="margin:10px 0 0;font-size:13px;line-height:1.7;color:#9f9f9f;">After your first login, we strongly recommend enabling <strong style="color:#ffffff;font-weight:600;">Two-Factor Authentication (2FA)</strong> in your account settings. 2FA adds an extra layer of protection by requiring a verification code from your authenticator app in addition to your password.</p></td></tr>
+                  </table>
+                  <p style="margin:26px 0 0;font-size:12px;line-height:1.7;color:#707070;">If you did not create a KLYKGO account, you can safely ignore this email. The account will not be activated until the email address is confirmed.</p>
+                  <p style="margin:12px 0 0;font-size:12px;line-height:1.7;color:#707070;">If you have any questions about your account or our services, contact us at <a href="mailto:project@klykgo.ch" style="color:#ffffff;text-decoration:none;">project@klykgo.ch</a>.</p>
                 {{ else if eq .Data.language "fr" }}
                   <div style="font-size:11px;line-height:1.4;letter-spacing:.20em;color:#8c8c8c;text-transform:uppercase;">Confirmation du compte</div>
                   <h1 style="margin:18px 0 18px;font-size:36px;line-height:1.08;font-weight:500;letter-spacing:-.035em;color:#ffffff;">Bienvenue chez KLYKGO.</h1>
-                  <p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#b9b9b9;">Merci d'avoir créé votre compte KLYKGO. Avant d'accéder à l'espace client, veuillez confirmer que l'adresse <strong style="color:#ffffff;font-weight:500;">{{ .Email }}</strong> vous appartient.</p>
-                  <p style="margin:0 0 30px;font-size:15px;line-height:1.75;color:#b9b9b9;">Utilisez le bouton ci-dessous pour vérifier votre adresse e-mail et activer votre compte.</p>
+                  <p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#b9b9b9;">Merci d’avoir créé votre compte KLYKGO.</p>
+                  <p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#b9b9b9;">Votre espace client personnel vous donne accès à une zone sécurisée où vous pouvez gérer les informations de votre compte, vos paramètres de sécurité et vos services KLYKGO.</p>
+                  <p style="margin:0 0 30px;font-size:15px;line-height:1.75;color:#b9b9b9;">Pour terminer votre inscription, veuillez confirmer que <strong style="color:#ffffff;font-weight:500;">{{ .Email }}</strong> vous appartient en utilisant le bouton ci-dessous.</p>
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                    <tr><td style="background:#ffffff;"><a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:16px 24px;color:#050505;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;">Confirmer l'adresse e-mail ↗</a></td></tr>
+                    <tr><td style="background:#ffffff;"><a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:16px 24px;color:#050505;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;">Confirmer l’adresse e-mail ↗</a></td></tr>
                   </table>
-                  <p style="margin:30px 0 0;font-size:12px;line-height:1.7;color:#707070;">Si vous n'avez pas créé de compte KLYKGO, vous pouvez ignorer cet e-mail.</p>
+                  <p style="margin:30px 0 0;font-size:14px;line-height:1.75;color:#9d9d9d;">La confirmation de votre adresse e-mail aide à protéger votre compte et garantit que vous seul pouvez utiliser cette adresse pour accéder à votre compte KLYKGO.</p>
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;background:#111111;border:1px solid #2a2a2a;">
+                    <tr><td style="padding:20px 22px;"><div style="font-size:11px;line-height:1.4;letter-spacing:.16em;color:#ffffff;text-transform:uppercase;">Étape de sécurité recommandée</div><p style="margin:10px 0 0;font-size:13px;line-height:1.7;color:#9f9f9f;">Après votre première connexion, nous vous recommandons vivement d’activer <strong style="color:#ffffff;font-weight:600;">l’authentification à deux facteurs (2FA)</strong> dans les paramètres de votre compte. La 2FA ajoute une protection supplémentaire en demandant un code généré par votre application d’authentification en plus de votre mot de passe.</p></td></tr>
+                  </table>
+                  <p style="margin:26px 0 0;font-size:12px;line-height:1.7;color:#707070;">Si vous n’avez pas créé de compte KLYKGO, vous pouvez ignorer cet e-mail. Le compte ne sera pas activé tant que l’adresse e-mail n’aura pas été confirmée.</p>
+                  <p style="margin:12px 0 0;font-size:12px;line-height:1.7;color:#707070;">Pour toute question concernant votre compte ou nos services, contactez-nous à <a href="mailto:project@klykgo.ch" style="color:#ffffff;text-decoration:none;">project@klykgo.ch</a>.</p>
                 {{ else }}
                   <div style="font-size:11px;line-height:1.4;letter-spacing:.20em;color:#8c8c8c;text-transform:uppercase;">Kontobestätigung</div>
                   <h1 style="margin:18px 0 18px;font-size:36px;line-height:1.08;font-weight:500;letter-spacing:-.035em;color:#ffffff;">Willkommen bei KLYKGO.</h1>
-                  <p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#b9b9b9;">Vielen Dank für Ihre Registrierung bei KLYKGO. Bevor Sie den Kundenbereich nutzen können, bestätigen Sie bitte, dass <strong style="color:#ffffff;font-weight:500;">{{ .Email }}</strong> Ihre E-Mail-Adresse ist.</p>
-                  <p style="margin:0 0 30px;font-size:15px;line-height:1.75;color:#b9b9b9;">Über die Schaltfläche unten bestätigen Sie Ihre E-Mail-Adresse und aktivieren Ihr Konto.</p>
+                  <p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#b9b9b9;">Vielen Dank, dass Sie ein KLYKGO-Konto erstellt haben.</p>
+                  <p style="margin:0 0 16px;font-size:15px;line-height:1.75;color:#b9b9b9;">Ihr persönliches Kundenkonto bietet Ihnen einen geschützten Bereich, in dem Sie Ihre Kontodaten, Sicherheitseinstellungen und KLYKGO-Dienstleistungen verwalten können.</p>
+                  <p style="margin:0 0 30px;font-size:15px;line-height:1.75;color:#b9b9b9;">Um Ihre Registrierung abzuschließen, bestätigen Sie bitte über die Schaltfläche unten, dass <strong style="color:#ffffff;font-weight:500;">{{ .Email }}</strong> Ihre E-Mail-Adresse ist.</p>
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                     <tr><td style="background:#ffffff;"><a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:16px 24px;color:#050505;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;">E-Mail-Adresse bestätigen ↗</a></td></tr>
                   </table>
-                  <p style="margin:30px 0 0;font-size:12px;line-height:1.7;color:#707070;">Falls Sie kein KLYKGO-Konto erstellt haben, können Sie diese E-Mail ignorieren.</p>
+                  <p style="margin:30px 0 0;font-size:14px;line-height:1.75;color:#9d9d9d;">Die Bestätigung Ihrer E-Mail-Adresse schützt Ihr Konto und stellt sicher, dass nur Sie diese Adresse für den Zugriff auf Ihr KLYKGO-Konto verwenden können.</p>
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;background:#111111;border:1px solid #2a2a2a;">
+                    <tr><td style="padding:20px 22px;"><div style="font-size:11px;line-height:1.4;letter-spacing:.16em;color:#ffffff;text-transform:uppercase;">Empfohlener Sicherheitsschritt</div><p style="margin:10px 0 0;font-size:13px;line-height:1.7;color:#9f9f9f;">Nach Ihrer ersten Anmeldung empfehlen wir Ihnen dringend, in den Kontoeinstellungen die <strong style="color:#ffffff;font-weight:600;">Zwei-Faktor-Authentifizierung (2FA)</strong> zu aktivieren. 2FA schützt Ihr Konto zusätzlich, indem neben Ihrem Passwort ein Bestätigungscode aus Ihrer Authenticator-App erforderlich ist.</p></td></tr>
+                  </table>
+                  <p style="margin:26px 0 0;font-size:12px;line-height:1.7;color:#707070;">Falls Sie kein KLYKGO-Konto erstellt haben, können Sie diese E-Mail ignorieren. Das Konto wird nicht aktiviert, solange die E-Mail-Adresse nicht bestätigt wurde.</p>
+                  <p style="margin:12px 0 0;font-size:12px;line-height:1.7;color:#707070;">Bei Fragen zu Ihrem Konto oder unseren Dienstleistungen erreichen Sie uns unter <a href="mailto:project@klykgo.ch" style="color:#ffffff;text-decoration:none;">project@klykgo.ch</a>.</p>
                 {{ end }}
               </td>
             </tr>
@@ -58,8 +76,8 @@
               <td style="padding:24px 38px;border-top:1px solid #252525;">
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                   <tr>
-                    <td style="font-size:10px;line-height:1.7;letter-spacing:.06em;color:#656565;">KLYKGO Marketing Agency<br>Switzerland</td>
-                    <td align="right" style="font-size:10px;line-height:1.7;color:#656565;">hello@klykgo.ch<br>{{ .SiteURL }}</td>
+                    <td style="font-size:10px;line-height:1.7;letter-spacing:.06em;color:#656565;">KLYKGO Marketing Agency<br>Strategy. Visibility. Growth.</td>
+                    <td align="right" style="font-size:10px;line-height:1.7;color:#656565;"><a href="mailto:project@klykgo.ch" style="color:#8d8d8d;text-decoration:none;">project@klykgo.ch</a><br>{{ .SiteURL }}</td>
                   </tr>
                 </table>
               </td>

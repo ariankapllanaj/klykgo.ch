@@ -24,7 +24,7 @@ Premium responsive one-page frontend for KLYKGO Marketing Agency.
 - 3 subscription cards with temporary descriptions/prices
 - Phase-2 modal for Login / subscription actions
 - Formspree-ready contact form
-- Instagram / TikTok / LinkedIn placeholders
+- Instagram: https://www.instagram.com/klykgo.ch/
 - Impressum / Datenschutz placeholders
 
 ## Run locally

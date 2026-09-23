@@ -68,9 +68,7 @@ export default function LegalFooter() {
 
           <div className="footer-column">
             <span>{t.footer.social}</span>
-            <a href="#" aria-label="Instagram">Instagram <b>↗</b></a>
-            <a href="#" aria-label="TikTok">TikTok <b>↗</b></a>
-            <a href="#" aria-label="LinkedIn">LinkedIn <b>↗</b></a>
+            <a href="https://www.instagram.com/klykgo.ch/" target="_blank" rel="noreferrer" aria-label="KLYKGO Instagram">Instagram <b>↗</b></a>
           </div>
 
           <div className="footer-column">

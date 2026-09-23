@@ -205,10 +205,18 @@ export default function AuthModal({ open, mode, setMode, onClose, user, configur
     { label: t.auth.passwordRequirementSpecial, valid: /[^A-Za-z0-9]/.test(password) }
   ];
 
+  const closeAuthModal = () => {
+    if (mfaFactorId && mfaChallengeId) {
+      void cancelMfa();
+      return;
+    }
+    onClose();
+  };
+
   return (
-    <div className="modal-backdrop auth-backdrop" role="presentation" onMouseDown={onClose}>
+    <div className="modal-backdrop auth-backdrop" role="presentation" onMouseDown={closeAuthModal}>
       <div className="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title" onMouseDown={(event) => event.stopPropagation()}>
-        <button className="modal-close" type="button" aria-label={t.auth.close} onClick={onClose}>×</button>
+        <button className="modal-close" type="button" aria-label={t.auth.close} onClick={closeAuthModal}>×</button>
 
         {mfaFactorId && mfaChallengeId ? (
           <>

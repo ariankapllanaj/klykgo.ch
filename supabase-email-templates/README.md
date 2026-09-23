@@ -1,11 +1,43 @@
-# KLYKGO Supabase email template
+# KLYKGO Supabase email templates
 
-Use `confirm-signup.html` for **Authentication → Email Templates → Confirm signup** in the hosted Supabase dashboard.
+These templates are designed for the hosted Supabase dashboard and support the KLYKGO website languages (German, English and French) through the user's `language` metadata.
 
-Recommended subject for launch:
+## Confirm signup
+
+Supabase path:
+
+**Authentication → Email Templates → Confirm signup**
+
+Template:
+
+`confirm-signup.html`
+
+Recommended subject:
 
 `KLYKGO | E-Mail-Adresse bestätigen`
 
-The website now saves the selected website language (`de`, `en`, or `fr`) into signup metadata, so the template automatically renders the matching language through Supabase Go-template conditions.
+## Password recovery
 
-For a professional sender identity in production, configure **Supabase Custom SMTP** with a KLYKGO mailbox such as `noreply@klykgo.ch` or `account@klykgo.ch` instead of relying on Supabase's default development mail sender.
+Supabase path:
+
+**Authentication → Email Templates → Reset Password / Recovery**
+
+Template:
+
+`reset-password.html`
+
+Recommended subject:
+
+`KLYKGO | Passwort zurücksetzen`
+
+The password recovery template uses Supabase's `{{ .ConfirmationURL }}` so it remains compatible with the current `/reset-password/` flow in this project.
+
+## Sender identity
+
+For production, configure **Supabase Custom SMTP** so the sender appears as KLYKGO rather than the default Supabase sender.
+
+Recommended sender:
+
+`KLYKGO <project@klykgo.ch>`
+
+Both templates also direct account-support questions to `project@klykgo.ch` and recommend enabling authenticator-app Two-Factor Authentication (2FA) for additional account protection.

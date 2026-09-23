@@ -148,7 +148,7 @@ export default function Home() {
                   <li key={feature}><span>+</span> {feature}</li>
                 ))}
               </ul>
-              <PhaseTwoButton className={plan.featured ? "button button-solid full-button" : "button button-outline full-button"}>
+              <PhaseTwoButton planName={plan.name} className={plan.featured ? "button button-solid full-button" : "button button-outline full-button"}>
                 {plan.name} {t.pricing.choose} <span>↗</span>
               </PhaseTwoButton>
             </article>
