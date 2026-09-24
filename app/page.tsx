@@ -2,11 +2,9 @@
 
 import ContactForm from "@/components/ContactForm";
 import HeroParallax from "@/components/HeroParallax";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 import LegalFooter from "@/components/LegalFooter";
-import MobileMenu from "@/components/MobileMenu";
+import SiteHeader from "@/components/SiteHeader";
 import PhaseTwoButton from "@/components/PhaseTwoButton";
-import AuthButton from "@/components/AuthButton";
 import ScrollTextEffects from "@/components/ScrollTextEffects";
 import { useLanguage } from "@/components/LanguageProvider";
 
@@ -16,29 +14,7 @@ export default function Home() {
   return (
     <main>
       <ScrollTextEffects />
-      <header className="topbar">
-        <a href="#home" className="brand" aria-label={t.nav.homeLabel}>
-          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/klykgo-logo-mark.jpg`} alt="" className="brand-mini-image" aria-hidden="true" />
-          <span>KLYKGO</span>
-        </a>
-
-        <nav className="desktop-nav" aria-label={t.nav.navigation}>
-          <a href="#leistungen">{t.nav.services}</a>
-          <a href="#ablauf">{t.nav.process}</a>
-          <a href="#abos">{t.nav.subscriptions}</a>
-          <a href="#kontakt">{t.nav.contact}</a>
-        </nav>
-
-        <div className="nav-actions">
-          <LanguageSwitcher compact />
-          <AuthButton className="login-link" />
-          <a className="button button-outline nav-cta" href="#kontakt">
-            {t.nav.startProject} <span>↗</span>
-          </a>
-        </div>
-
-        <MobileMenu />
-      </header>
+      <SiteHeader />
 
       <HeroParallax />
 
@@ -102,6 +78,19 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="section partner-feature" aria-labelledby="partner-feature-title">
+        <div className="section-label">{t.partner.label}</div>
+        <div className="partner-feature-copy">
+          <p className="eyebrow">{t.partner.eyebrow}</p>
+          <h2 id="partner-feature-title">{t.partner.featureTitle}</h2>
+          <p>{t.partner.featureCopy}</p>
+          <a className="button button-outline" href="/partner/">{t.partner.viewPage} <span aria-hidden="true">↗</span></a>
+        </div>
+        <a className="partner-logo-card" href="/partner/" aria-label={t.partner.viewPage}>
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/it-service-manai-logo.webp`} alt="IT Service Manai — Infrastructure & Logistics" />
+        </a>
       </section>
 
       <section className="section process-section" id="ablauf">

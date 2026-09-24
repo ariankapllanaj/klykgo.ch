@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import AuthButton from "./AuthButton";
 import { useLanguage } from "./LanguageProvider";
@@ -10,6 +11,8 @@ export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { t, language } = useLanguage();
+  const isHome = usePathname() === "/";
+  const homeLink = (anchor: string) => `${isHome ? "" : "/"}#${anchor}`;
 
   const menuCopy = {
     de: {
@@ -37,10 +40,11 @@ export default function MobileMenu() {
 
   const copy = menuCopy[language];
   const links = [
-    [copy.services, "#leistungen"],
-    [copy.process, "#ablauf"],
-    [copy.subscriptions, "#abos"],
-    [copy.contact, "#kontakt"]
+    [copy.services, homeLink("leistungen")],
+    [copy.process, homeLink("ablauf")],
+    [copy.subscriptions, homeLink("abos")],
+    [t.nav.partner, "/partner/"],
+    [copy.contact, homeLink("kontakt")]
   ] as const;
 
   useEffect(() => setMounted(true), []);
@@ -81,7 +85,7 @@ export default function MobileMenu() {
       {mounted && open ? createPortal(
         <div className="mobile-menu is-open" role="dialog" aria-modal="true" aria-label={t.nav.navigation}>
           <div className="mobile-menu-top">
-            <a href="#home" className="mobile-menu-brand" onClick={closeMenu} aria-label={t.nav.homeLabel}>
+            <a href={homeLink("home")} className="mobile-menu-brand" onClick={closeMenu} aria-label={t.nav.homeLabel}>
               <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/klykgo-logo-mark.jpg`} alt="" className="brand-mini-image" aria-hidden="true" />
               <span>KLYKGO</span>
             </a>
@@ -105,7 +109,7 @@ export default function MobileMenu() {
             </nav>
             <div className="mobile-menu-actions">
               <AuthButton className="button button-outline mobile-auth-button" onBeforeOpen={closeMenu} />
-              <a className="button button-solid mobile-cta" href="#kontakt" onClick={closeMenu}>
+              <a className="button button-solid mobile-cta" href={homeLink("kontakt")} onClick={closeMenu}>
                 {copy.startProject} <span>↗</span>
               </a>
             </div>

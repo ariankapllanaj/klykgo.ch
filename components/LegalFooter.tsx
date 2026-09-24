@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "./LanguageProvider";
 
 type LegalPage = "impressum" | "datenschutz" | "agb" | "cookies";
@@ -36,6 +37,8 @@ function LegalText({ text }: { text: string }) {
 export default function LegalFooter() {
   const [active, setActive] = useState<LegalPage | null>(null);
   const { t } = useLanguage();
+  const isHome = usePathname() === "/";
+  const homeLink = (anchor: string) => `${isHome ? "" : "/"}#${anchor}`;
 
   useEffect(() => {
     const openHandler = (event: Event) => {
@@ -74,7 +77,7 @@ export default function LegalFooter() {
       <footer className="footer">
         <div className="footer-main">
           <div className="footer-identity">
-            <a href="#home" className="footer-wordmark" aria-label={t.nav.homeLabel}>
+            <a href={homeLink("home")} className="footer-wordmark" aria-label={t.nav.homeLabel}>
               <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/klykgo-logo-mark.jpg`} alt="" className="brand-mini-image footer-mini-image" aria-hidden="true" />
               <span>KLYKGO</span>
             </a>
@@ -84,10 +87,11 @@ export default function LegalFooter() {
 
           <nav className="footer-column" aria-label={t.footer.navigation}>
             <span>{t.footer.navigation}</span>
-            <a href="#leistungen">{t.footer.services}</a>
-            <a href="#ablauf">{t.footer.process}</a>
-            <a href="#abos">{t.footer.subscriptions}</a>
-            <a href="#kontakt">{t.footer.contact}</a>
+            <a href={homeLink("leistungen")}>{t.footer.services}</a>
+            <a href={homeLink("ablauf")}>{t.footer.process}</a>
+            <a href={homeLink("abos")}>{t.footer.subscriptions}</a>
+            <a href="/partner/">{t.nav.partner}</a>
+            <a href={homeLink("kontakt")}>{t.footer.contact}</a>
           </nav>
 
           <div className="footer-column">

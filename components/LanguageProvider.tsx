@@ -16,7 +16,8 @@ const de = {
     navigation: "Navigation",
     openMenu: "Menü öffnen",
     closeMenu: "Menü schliessen",
-    homeLabel: "KLYKGO Startseite"
+    homeLabel: "KLYKGO Startseite",
+    partner: "Partner"
   },
   hero: {
     kicker: "KLYKGO / SWISS MARKETING AGENCY",
@@ -81,6 +82,22 @@ const de = {
       ["02", "SICHTBARKEIT", "Wir machen Ihre Marke sichtbar."],
       ["03", "WACHSTUM", "Wir verwandeln Aufmerksamkeit in messbare Ergebnisse."]
     ]
+  },
+  partner: {
+    label: "PARTNER / IT SERVICE MANAI",
+    eyebrow: "Gemeinsam vernetzt.",
+    featureTitle: "IT Service Manai.",
+    featureCopy: "Unser Partner für Infrastruktur und Logistik.",
+    viewPage: "Partner ansehen",
+    pageTitle: "Starke Verbindungen.",
+    pageLead: "IT Service Manai ist Partner von KLYKGO im Bereich Infrastruktur und Logistik.",
+    scopeLabel: "SCHWERPUNKT",
+    scopeTitle: "Infrastruktur & Logistik",
+    scopeCopy: "Wir stellen IT Service Manai als Partner vor. Details zu gemeinsamen Leistungen besprechen wir gerne direkt mit Ihnen.",
+    contactTitle: "Sprechen wir über Ihr Projekt.",
+    contactCopy: "Sie möchten mehr über die Zusammenarbeit erfahren? Kontaktieren Sie KLYKGO.",
+    contactAction: "Kontakt aufnehmen",
+    back: "Zur Startseite"
   },
   process: {
     label: "04 / ABLAUF",
@@ -250,7 +267,7 @@ const en: Dictionary = {
   language: { label: "Language", de: "DE", en: "EN", fr: "FR" },
   nav: {
     services: "Services", process: "Process", subscriptions: "Plans", contact: "Contact", login: "Login",
-    startProject: "Start a project", navigation: "Navigation", openMenu: "Open menu", closeMenu: "Close menu", homeLabel: "KLYKGO home"
+    startProject: "Start a project", navigation: "Navigation", openMenu: "Open menu", closeMenu: "Close menu", homeLabel: "KLYKGO home", partner: "Partner"
   },
   hero: {
     kicker: "KLYKGO / SWISS MARKETING AGENCY",
@@ -279,6 +296,22 @@ const en: Dictionary = {
       ["02", "VISIBILITY", "We make your brand visible."],
       ["03", "GROWTH", "We turn attention into measurable results."]
     ]
+  },
+  partner: {
+    label: "PARTNER / IT SERVICE MANAI",
+    eyebrow: "Connected by partnership.",
+    featureTitle: "IT Service Manai.",
+    featureCopy: "Our partner in infrastructure and logistics.",
+    viewPage: "View partner",
+    pageTitle: "Strong connections.",
+    pageLead: "IT Service Manai is a KLYKGO partner in infrastructure and logistics.",
+    scopeLabel: "FOCUS",
+    scopeTitle: "Infrastructure & logistics",
+    scopeCopy: "We introduce IT Service Manai as a partner. Contact us to discuss the details of working together.",
+    contactTitle: "Let's talk about your project.",
+    contactCopy: "Want to learn more about the partnership? Get in touch with KLYKGO.",
+    contactAction: "Get in touch",
+    back: "Back to home"
   },
   process: {
     label: "04 / PROCESS", eyebrow: "From the idea to the impact.", title: "A clear process.",
@@ -411,7 +444,7 @@ const en: Dictionary = {
 const fr: Dictionary = {
   language: { label: "Langue", de: "DE", en: "EN", fr: "FR" },
   nav: {
-    services: "Services", process: "Processus", subscriptions: "Abonnements", contact: "Contact", login: "Connexion",
+    services: "Services", process: "Processus", subscriptions: "Abonnements", contact: "Contact", login: "Connexion", partner: "Partenaire",
     startProject: "Démarrer un projet", navigation: "Navigation", openMenu: "Ouvrir le menu", closeMenu: "Fermer le menu", homeLabel: "Accueil KLYKGO"
   },
   hero: {
@@ -441,6 +474,22 @@ const fr: Dictionary = {
       ["02", "VISIBILITÉ", "Nous rendons votre marque visible."],
       ["03", "CROISSANCE", "Nous transformons l’attention en résultats mesurables."]
     ]
+  },
+  partner: {
+    label: "PARTENAIRE / IT SERVICE MANAI",
+    eyebrow: "Un partenariat solide.",
+    featureTitle: "IT Service Manai.",
+    featureCopy: "Notre partenaire en infrastructure et logistique.",
+    viewPage: "Voir le partenaire",
+    pageTitle: "Des liens solides.",
+    pageLead: "IT Service Manai est partenaire de KLYKGO dans les domaines de l'infrastructure et de la logistique.",
+    scopeLabel: "DOMAINE",
+    scopeTitle: "Infrastructure & logistique",
+    scopeCopy: "Nous présentons IT Service Manai en tant que partenaire. Contactez-nous pour discuter des détails d'une collaboration.",
+    contactTitle: "Parlons de votre projet.",
+    contactCopy: "Vous souhaitez en savoir plus sur ce partenariat ? Contactez KLYKGO.",
+    contactAction: "Prendre contact",
+    back: "Retour à l'accueil"
   },
   process: {
     label: "04 / PROCESSUS", eyebrow: "De l'idée à l'impact.", title: "Un processus clair.",
