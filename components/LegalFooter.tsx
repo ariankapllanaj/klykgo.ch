@@ -9,6 +9,30 @@ export function openLegalPage(page: LegalPage) {
   window.dispatchEvent(new CustomEvent("klykgo:legal", { detail: page }));
 }
 
+function LegalText({ text }: { text: string }) {
+  const parts = text.split(/(info@klykgo\.ch|\+41 79 900 74 73)/g);
+
+  return (
+    <p>
+      {parts.map((part, index) => {
+        if (part === "info@klykgo.ch") {
+          return <a key={index} href="mailto:info@klykgo.ch">{part}</a>;
+        }
+        if (part === "+41 79 900 74 73") {
+          return <a key={index} href="tel:+41799007473">{part}</a>;
+        }
+
+        return part.split("\n").map((line, lineIndex, lines) => (
+          <span key={`${index}-${lineIndex}`}>
+            {line}
+            {lineIndex < lines.length - 1 && <br />}
+          </span>
+        ));
+      })}
+    </p>
+  );
+}
+
 export default function LegalFooter() {
   const [active, setActive] = useState<LegalPage | null>(null);
   const { t } = useLanguage();
@@ -55,7 +79,7 @@ export default function LegalFooter() {
               <span>KLYKGO</span>
             </a>
             <p>{t.footer.description}</p>
-            <a className="footer-contact-link" href="mailto:project@klykgo.ch">project@klykgo.ch <span>↗</span></a>
+            <a className="footer-contact-link" href="mailto:info@klykgo.ch">info@klykgo.ch <span>↗</span></a>
           </div>
 
           <nav className="footer-column" aria-label={t.footer.navigation}>
@@ -104,7 +128,7 @@ export default function LegalFooter() {
               {legalPage.sections.map(([heading, text, style], index) => (
                 <section key={`${heading}-${index}`} className={style === "note" ? "legal-note" : undefined}>
                   <h4>{heading}</h4>
-                  <p>{text}</p>
+                  <LegalText text={text} />
                 </section>
               ))}
             </div>

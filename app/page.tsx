@@ -170,7 +170,7 @@ export default function Home() {
           <div className="contact-direct">
             <div>
               <span>{t.contact.email}</span>
-              <a href="mailto:project@klykgo.ch">project@klykgo.ch</a>
+              <a href="mailto:info@klykgo.ch">info@klykgo.ch</a>
             </div>
             <div>
               <span>{t.contact.location}</span>

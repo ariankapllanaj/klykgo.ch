@@ -26,6 +26,14 @@ export const metadata: Metadata = {
 
   applicationName: "KLYKGO",
 
+  icons: {
+    icon: [
+      { url: "klykgo-logo-mark.jpg", type: "image/jpeg" }
+    ],
+    shortcut: "klykgo-logo-mark.jpg",
+    apple: "klykgo-logo-mark.jpg"
+  },
+
   keywords: [
     "KLYKGO",
     "Marketing Agency",

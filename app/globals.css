@@ -2119,6 +2119,13 @@ main {
 
 .legal-modal-body a {
   color: #d8d8d8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 180ms ease;
+}
+
+.legal-modal-body a:hover {
+  color: #fff;
 }
 
 .legal-modal-body .legal-note {
@@ -2590,4 +2597,3 @@ button:disabled {
   .account-mfa-actions { flex-direction: column; }
   .account-mfa-actions .button { width: 100%; }
 }
-

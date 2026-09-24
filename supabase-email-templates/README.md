@@ -38,6 +38,6 @@ For production, configure **Supabase Custom SMTP** so the sender appears as KLYK
 
 Recommended sender:
 
-`KLYKGO <project@klykgo.ch>`
+`KLYKGO <info@klykgo.ch>`
 
-Both templates also direct account-support questions to `project@klykgo.ch` and recommend enabling authenticator-app Two-Factor Authentication (2FA) for additional account protection.
+Both templates also direct account-support questions to `info@klykgo.ch` and recommend enabling authenticator-app Two-Factor Authentication (2FA) for additional account protection.

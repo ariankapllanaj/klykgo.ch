@@ -1,14 +1,14 @@
 {
   "brand": "KLYKGO",
-  "legalName": "",
-  "street": "",
-  "postalCode": "",
-  "city": "",
+  "legalName": "KLYKGO Marketing Agency",
+  "street": "Freiburgstrasse 581",
+  "postalCode": "3172",
+  "city": "Niederwangen bei Bern",
   "country": "Schweiz / Switzerland / Suisse",
   "representative": "",
-  "email": "project@klykgo.ch",
-  "phone": "",
-  "uid": "",
+  "email": "info@klykgo.ch",
+  "phone": "+41 79 900 74 73",
+  "uid": "CHE-315.597.086",
   "vatId": "",
   "socials": {
     "Instagram": "https://www.instagram.com/klykgo.ch/"

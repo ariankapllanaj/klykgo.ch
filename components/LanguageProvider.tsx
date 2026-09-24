@@ -123,7 +123,7 @@ const de = {
     copy: "Erzählen Sie uns, was Sie vorhaben. Wir melden uns mit einer klaren nächsten Empfehlung für Ihr Projekt.",
     email: "E-Mail",
     location: "Standort",
-    switzerland: "Schweiz"
+    switzerland: "Freiburgstrasse 581, 3172 Niederwangen bei Bern"
   },
   form: {
     name: "Name *", namePlaceholder: "Ihr Name",
@@ -199,16 +199,15 @@ const de = {
     impressum: {
       title: "Impressum", kicker: "Rechtliche Angaben",
       sections: [
-        ["Anbieter", "KLYKGO Marketing Agency\n[Rechtlicher Firmenname ergänzen]\n[Strasse und Hausnummer]\n[PLZ Ort], Schweiz"],
-        ["Kontakt", "E-Mail: hello@klykgo.ch\nTelefon: [Telefonnummer ergänzen]"],
-        ["Unternehmensangaben", "UID / Handelsregister: [falls vorhanden ergänzen]\nMWST-Nr.: [falls vorhanden ergänzen]\nVertretungsberechtigte Person: [Name ergänzen]"],
-        ["Vor dem Launch", "Die Platzhalter in diesem Impressum müssen mit den definitiven Unternehmensangaben von KLYKGO ersetzt werden.", "note"]
+        ["Anbieter", "KLYKGO Marketing Agency\nFreiburgstrasse 581\n3172 Niederwangen bei Bern\nSchweiz"],
+        ["Kontakt", "E-Mail: info@klykgo.ch\nTelefon: +41 79 900 74 73"],
+        ["Unternehmensangaben", "UID: CHE-315.597.086"]
       ]
     },
     privacy: {
       title: "Datenschutz", kicker: "Datenschutzerklärung",
       sections: [
-        ["1. Verantwortliche Stelle", "Verantwortlich für die Bearbeitung personenbezogener Daten über diese Website ist KLYKGO Marketing Agency. Die vollständige Firmenadresse und die verantwortliche Kontaktperson werden vor dem Launch ergänzt."],
+        ["1. Verantwortliche Stelle", "Verantwortlich für die Bearbeitung personenbezogener Daten über diese Website ist KLYKGO Marketing Agency, Freiburgstrasse 581, 3172 Niederwangen bei Bern, Schweiz. Datenschutzanfragen können an info@klykgo.ch gerichtet werden."],
         ["2. Welche Daten wir bearbeiten", "Beim Besuch der Website können technisch notwendige Verbindungsdaten verarbeitet werden. Wenn Sie das Kontaktformular nutzen, bearbeiten wir die von Ihnen eingegebenen Angaben wie Name, Unternehmen, E-Mail-Adresse, Telefonnummer, gewünschte Leistung und Nachricht."],
         ["3. Zweck der Bearbeitung", "Wir verwenden diese Daten zur Bereitstellung und Sicherheit der Website, zur Bearbeitung von Anfragen, zur Kommunikation mit Interessenten und Kunden sowie zur Vorbereitung und Durchführung unserer Dienstleistungen."],
         ["4. Kontaktformular und Dienstleister", "Das Kontaktformular kann über Formspree verarbeitet werden. Dabei können die im Formular eingegebenen Daten an einen externen Dienstleister übermittelt werden. Vor dem Launch sind die tatsächlich eingesetzten Dienstleister, deren Verarbeitungsorte und die erforderlichen Schutzmassnahmen abschliessend zu prüfen und hier zu dokumentieren."],
@@ -216,7 +215,7 @@ const de = {
         ["6. Aufbewahrung und Sicherheit", "Wir bewahren personenbezogene Daten nur so lange auf, wie dies für den jeweiligen Zweck oder aufgrund gesetzlicher Pflichten erforderlich ist. Angemessene technische und organisatorische Massnahmen schützen die Daten vor unbefugtem Zugriff, Verlust und Missbrauch."],
         ["7. Ihre Rechte", "Im Rahmen des anwendbaren Datenschutzrechts können Sie insbesondere Auskunft über Ihre bearbeiteten Daten verlangen sowie deren Berichtigung oder Löschung beantragen. Anfragen können an die im Impressum genannte Kontaktadresse gerichtet werden."],
         ["8. Änderungen", "Diese Datenschutzerklärung kann angepasst werden, wenn sich Funktionen, Dienstleister oder rechtliche Anforderungen ändern."],
-        ["Hinweis für Phase 2", "Mit Login, Supabase, Stripe, Kundenkonto und allfälligen Analyse-Tools muss diese Datenschutzerklärung vor dem Backend-Launch erweitert werden.", "note"]
+        ["Supabase", "Für Anmeldung, Login und Kundenkonten nutzen wir Supabase als Authentifizierungsdienst. Dabei werden die für die Kontoerstellung und Anmeldung erforderlichen Angaben, insbesondere Ihre E-Mail-Adresse und Authentifizierungsdaten, verarbeitet. Die Daten werden auf Infrastruktur von Supabase gespeichert und verarbeitet. Bitte beachten Sie auch die Datenschutzhinweise von Supabase. Zahlungsdienste wie Stripe sowie Analyse- oder Marketing-Tracking sind derzeit nicht Bestandteil dieser Website.", "note"]
       ]
     },
     terms: {
@@ -225,12 +224,13 @@ const de = {
         ["1. Geltungsbereich", "Diese AGB regeln die Vertragsbeziehung zwischen KLYKGO und seinen Kunden für Marketing, Branding, Webdesign und Webentwicklung, Werbetechnik, Content sowie abonnierte Dienstleistungen."],
         ["2. Angebote und Vertragsabschluss", "Leistungsumfang, Preis, Termine und besondere Bedingungen ergeben sich aus dem jeweiligen Angebot oder dem gewählten Abonnement. Ein Vertrag kommt zustande, sobald das Angebot angenommen oder ein kostenpflichtiges Abonnement verbindlich abgeschlossen wurde."],
         ["3. Preise und Zahlung", "Alle Preise, Währungen, Steuern, Zahlungsfristen und allfälligen Zusatzkosten werden vor dem Vertragsabschluss transparent ausgewiesen. Wiederkehrende Abonnements werden gemäss dem beim Abschluss angezeigten Abrechnungsintervall verrechnet."],
-        ["4. Abonnements, Änderungen und Kündigung", "Die definitive Mindestlaufzeit, Verlängerung, Upgrade- und Downgrade-Regeln sowie Kündigungsfristen werden vor Aktivierung der kostenpflichtigen Abonnements festgelegt und im Checkout klar angezeigt."],
+        ["4. Abonnements, Änderungen und Kündigung", "Laufzeit, Verlängerung und Kündigungsfrist eines Abonnements richten sich nach dem jeweiligen Angebot. Ohne abweichende schriftliche Vereinbarung kann ein Abonnement auf das Ende der vereinbarten Laufzeit gekündigt werden. Bereits erbrachte Leistungen und angefallene Drittkosten bleiben geschuldet."],
         ["5. Mitwirkung des Kunden", "Der Kunde stellt benötigte Inhalte, Zugänge, Freigaben und Informationen rechtzeitig zur Verfügung. Verzögerungen aufgrund fehlender Mitwirkung können vereinbarte Termine entsprechend verschieben."],
         ["6. Nutzungsrechte", "Die Übertragung von Nutzungsrechten an Designs, Inhalten, Websites, Software oder anderen Arbeitsergebnissen richtet sich nach dem jeweiligen Angebot. Rechte Dritter und lizenzierte Bestandteile bleiben vorbehalten."],
-        ["7. Gewährleistung und Haftung", "KLYKGO erbringt die vereinbarten Leistungen fachgerecht. Umfang und Grenzen von Gewährleistung und Haftung werden im definitiven Vertrag unter Beachtung des zwingenden Schweizer Rechts geregelt."],
-        ["8. Schlussbestimmungen", "Anwendbares Recht, Gerichtsstand und die vollständigen Vertragsbedingungen werden vor dem kommerziellen Launch der Abonnements finalisiert."],
-        ["Entwurf für Phase 1", "Diese AGB sind aktuell eine strukturierte Vorlage. Vor Aktivierung von Stripe und bezahlten Abonnements müssen Preise, Leistungsumfang, Laufzeiten, Kündigung und Haftungsregeln mit dem Kunden final festgelegt und rechtlich geprüft werden.", "note"]
+        ["7. Abnahme und Mängel", "Der Kunde prüft gelieferte Leistungen zeitnah und meldet erkennbare Mängel innert 10 Tagen schriftlich. KLYKGO erhält zunächst Gelegenheit zur Nachbesserung. Erfolgt innerhalb dieser Frist keine Meldung, gilt die Leistung hinsichtlich erkennbarer Mängel als genehmigt."],
+        ["8. Haftung", "KLYKGO haftet für direkte Schäden, die durch vorsätzliches oder grobfahrlässiges Verhalten verursacht wurden. Soweit gesetzlich zulässig, ist die Haftung für leichte Fahrlässigkeit, indirekte Schäden, Folgeschäden, entgangenen Gewinn sowie Ausfälle von Drittanbieter-Diensten ausgeschlossen. Zwingende gesetzliche Ansprüche bleiben vorbehalten."],
+        ["9. Vertraulichkeit und Datenschutz", "Beide Parteien behandeln vertrauliche Informationen der jeweils anderen Partei sorgfältig und verwenden sie nur zur Vertragsdurchführung. Die Bearbeitung personenbezogener Daten richtet sich nach der Datenschutzerklärung von KLYKGO und dem anwendbaren Schweizer Datenschutzrecht."],
+        ["10. Schlussbestimmungen", "Änderungen und Ergänzungen bedürfen der Textform. Sollte eine Bestimmung unwirksam sein, bleiben die übrigen Bestimmungen unberührt. Es gilt Schweizer Recht. Ausschliesslicher Gerichtsstand ist, soweit gesetzlich zulässig, der Sitz von KLYKGO."]
       ]
     },
     cookies: {
@@ -302,7 +302,7 @@ const en: Dictionary = {
   contact: {
     label: "06 / CONTACT", eyebrow: "Ready for the next step?", title1: "Let's create something", title2: "that stands out.",
     copy: "Tell us what you are planning. We will come back with a clear recommendation for the next step in your project.",
-    email: "Email", location: "Location", switzerland: "Switzerland"
+    email: "Email", location: "Location", switzerland: "Freiburgstrasse 581, 3172 Niederwangen bei Bern"
   },
   form: {
     name: "Name *", namePlaceholder: "Your name", company: "Company", companyPlaceholder: "Company name", email: "Email *", emailPlaceholder: "name@company.ch", phone: "Phone", phonePlaceholder: "+41 ...",
@@ -363,16 +363,15 @@ const en: Dictionary = {
     impressum: {
       title: "Imprint", kicker: "Legal information",
       sections: [
-        ["Provider", "KLYKGO Marketing Agency\n[Add legal company name]\n[Street and number]\n[Postcode City], Switzerland"],
-        ["Contact", "Email: hello@klykgo.ch\nPhone: [add phone number]"],
-        ["Company information", "UID / Commercial Register: [add if applicable]\nVAT No.: [add if applicable]\nAuthorised representative: [add name]"],
-        ["Before launch", "The placeholders in this imprint must be replaced with KLYKGO's final company information before launch.", "note"]
+        ["Provider", "KLYKGO Marketing Agency\nFreiburgstrasse 581\n3172 Niederwangen bei Bern\nSwitzerland"],
+        ["Contact", "Email: info@klykgo.ch\nPhone: +41 79 900 74 73"],
+        ["Company information", "UID: CHE-315.597.086"]
       ]
     },
     privacy: {
       title: "Privacy", kicker: "Privacy Policy",
       sections: [
-        ["1. Controller", "KLYKGO Marketing Agency is responsible for processing personal data through this website. The complete company address and responsible contact person will be added before launch."],
+        ["1. Controller", "KLYKGO Marketing Agency, Freiburgstrasse 581, 3172 Niederwangen bei Bern, Switzerland, is responsible for processing personal data through this website. Privacy enquiries may be sent to info@klykgo.ch."],
         ["2. Data we process", "When you visit the website, technically necessary connection data may be processed. If you use the contact form, we process the information you enter, including name, company, email address, phone number, requested service and message."],
         ["3. Purpose of processing", "We use this data to provide and secure the website, handle enquiries, communicate with prospective and existing clients, and prepare and deliver our services."],
         ["4. Contact form and service providers", "The contact form may be processed through Formspree. Information entered in the form may therefore be transferred to an external service provider. Before launch, the actual providers, processing locations and required safeguards must be reviewed and documented here."],
@@ -380,7 +379,7 @@ const en: Dictionary = {
         ["6. Retention and security", "We retain personal data only for as long as required for the relevant purpose or by law. Appropriate technical and organisational measures are used to protect data against unauthorised access, loss and misuse."],
         ["7. Your rights", "Under applicable data protection law, you may in particular request information about your processed data and ask for correction or deletion. Requests can be sent to the contact address stated in the imprint."],
         ["8. Changes", "This Privacy Policy may be updated when website functions, service providers or legal requirements change."],
-        ["Phase 2 note", "When login, Supabase, Stripe, client accounts or analytics tools are added, this Privacy Policy must be expanded before the backend launch.", "note"]
+        ["Supabase", "We use Supabase as our authentication service for registration, login and client accounts. This involves processing information needed to create and access an account, in particular your email address and authentication data. This data is stored and processed on Supabase infrastructure. Please also consult Supabase's privacy information. Payment services such as Stripe and analytics or marketing tracking are not currently part of this website.", "note"]
       ]
     },
     terms: {
@@ -389,12 +388,13 @@ const en: Dictionary = {
         ["1. Scope", "These terms govern the contractual relationship between KLYKGO and its clients for marketing, branding, web design and development, signage, content and subscription services."],
         ["2. Offers and contract formation", "The scope of services, price, schedule and special conditions are defined in the relevant offer or selected subscription. A contract is formed when an offer is accepted or a paid subscription is validly completed."],
         ["3. Prices and payment", "All prices, currencies, taxes, payment periods and possible additional costs will be shown transparently before a contract is concluded. Recurring subscriptions are charged according to the billing interval shown at checkout."],
-        ["4. Subscriptions, changes and cancellation", "Final minimum terms, renewals, upgrade and downgrade rules and cancellation periods will be defined before paid subscriptions are activated and clearly shown at checkout."],
+        ["4. Subscriptions, changes and cancellation", "The term, renewal and notice period of a subscription are governed by the relevant offer. Unless otherwise agreed in writing, a subscription may be cancelled at the end of the agreed term. Services already performed and third-party costs already incurred remain payable."],
         ["5. Client cooperation", "The client provides required content, access, approvals and information on time. Delays caused by missing cooperation may move agreed delivery dates accordingly."],
         ["6. Usage rights", "The transfer of usage rights for designs, content, websites, software or other work products is governed by the relevant offer. Third-party rights and licensed components remain reserved."],
-        ["7. Warranty and liability", "KLYKGO provides the agreed services professionally. The scope and limits of warranty and liability will be defined in the final agreement in accordance with mandatory Swiss law."],
-        ["8. Final provisions", "Applicable law, jurisdiction and complete contractual terms will be finalised before the commercial launch of subscriptions."],
-        ["Phase 1 draft", "These terms are currently a structured template. Before Stripe and paid subscriptions are activated, prices, scope, terms, cancellation and liability rules must be finalised with the client and legally reviewed.", "note"]
+        ["7. Acceptance and defects", "The client must inspect delivered services promptly and report identifiable defects in writing within 10 days. KLYKGO will first be given the opportunity to remedy the defect. If no report is made within this period, the service is deemed accepted in respect of identifiable defects."],
+        ["8. Liability", "KLYKGO is liable for direct damage caused intentionally or through gross negligence. To the extent permitted by law, liability for ordinary negligence, indirect or consequential damage, loss of profit and outages of third-party services is excluded. Mandatory statutory claims remain unaffected."],
+        ["9. Confidentiality and data protection", "Both parties must handle the other party's confidential information with care and use it only to perform the contract. Personal data is processed in accordance with KLYKGO's Privacy Policy and applicable Swiss data protection law."],
+        ["10. Final provisions", "Amendments and additions must be made in text form. If a provision is invalid, the remaining provisions remain unaffected. Swiss law applies. To the extent permitted by law, the exclusive place of jurisdiction is KLYKGO's registered office."]
       ]
     },
     cookies: {
@@ -464,7 +464,7 @@ const fr: Dictionary = {
   contact: {
     label: "06 / CONTACT", eyebrow: "Prêt pour la prochaine étape ?", title1: "Créons quelque chose", title2: "qui se remarque.",
     copy: "Parlez-nous de votre projet. Nous reviendrons vers vous avec une recommandation claire pour la prochaine étape.",
-    email: "E-mail", location: "Localisation", switzerland: "Suisse"
+    email: "E-mail", location: "Localisation", switzerland: "Freiburgstrasse 581, 3172 Niederwangen bei Bern"
   },
   form: {
     name: "Nom *", namePlaceholder: "Votre nom", company: "Entreprise", companyPlaceholder: "Nom de l'entreprise", email: "E-mail *", emailPlaceholder: "nom@entreprise.ch", phone: "Téléphone", phonePlaceholder: "+41 ...",
@@ -525,16 +525,15 @@ const fr: Dictionary = {
     impressum: {
       title: "Mentions légales", kicker: "Informations légales",
       sections: [
-        ["Prestataire", "KLYKGO Marketing Agency\n[Ajouter la raison sociale]\n[Rue et numéro]\n[NPA Localité], Suisse"],
-        ["Contact", "E-mail : hello@klykgo.ch\nTéléphone : [ajouter le numéro]"],
-        ["Informations sur l'entreprise", "IDE / Registre du commerce : [ajouter si applicable]\nN° TVA : [ajouter si applicable]\nPersonne autorisée à représenter : [ajouter le nom]"],
-        ["Avant le lancement", "Les informations provisoires de ces mentions légales doivent être remplacées par les données définitives de KLYKGO avant le lancement.", "note"]
+        ["Prestataire", "KLYKGO Marketing Agency\nFreiburgstrasse 581\n3172 Niederwangen bei Bern\nSuisse"],
+        ["Contact", "E-mail : info@klykgo.ch\nTéléphone : +41 79 900 74 73"],
+        ["Informations sur l'entreprise", "IDE : CHE-315.597.086"]
       ]
     },
     privacy: {
       title: "Confidentialité", kicker: "Politique de confidentialité",
       sections: [
-        ["1. Responsable", "KLYKGO Marketing Agency est responsable du traitement des données personnelles effectué via ce site. L'adresse complète de l'entreprise et la personne de contact responsable seront ajoutées avant le lancement."],
+        ["1. Responsable", "KLYKGO Marketing Agency, Freiburgstrasse 581, 3172 Niederwangen bei Bern, Suisse, est responsable du traitement des données personnelles effectué via ce site. Les demandes relatives à la confidentialité peuvent être adressées à info@klykgo.ch."],
         ["2. Données traitées", "Lors de votre visite, des données de connexion techniquement nécessaires peuvent être traitées. Si vous utilisez le formulaire de contact, nous traitons les informations saisies, notamment le nom, l'entreprise, l'adresse e-mail, le numéro de téléphone, le service demandé et le message."],
         ["3. Finalité du traitement", "Ces données sont utilisées pour fournir et sécuriser le site, traiter les demandes, communiquer avec les prospects et clients, et préparer ou fournir nos services."],
         ["4. Formulaire de contact et prestataires", "Le formulaire de contact peut être traité via Formspree. Les données saisies peuvent donc être transmises à un prestataire externe. Avant le lancement, les prestataires effectivement utilisés, leurs lieux de traitement et les mesures de protection nécessaires doivent être vérifiés et documentés ici."],
@@ -542,7 +541,7 @@ const fr: Dictionary = {
         ["6. Conservation et sécurité", "Nous conservons les données personnelles uniquement pendant la durée nécessaire à la finalité concernée ou imposée par la loi. Des mesures techniques et organisationnelles appropriées protègent les données contre les accès non autorisés, la perte et les abus."],
         ["7. Vos droits", "Dans le cadre du droit applicable, vous pouvez notamment demander des informations sur les données traitées et solliciter leur rectification ou leur suppression. Les demandes peuvent être adressées au contact indiqué dans les mentions légales."],
         ["8. Modifications", "Cette politique de confidentialité peut être adaptée lorsque les fonctionnalités, prestataires ou exigences légales évoluent."],
-        ["Note Phase 2", "Avec la connexion, Supabase, Stripe, les comptes clients ou d'éventuels outils d'analyse, cette politique devra être complétée avant le lancement du backend.", "note"]
+        ["Supabase", "Nous utilisons Supabase comme service d'authentification pour l'inscription, la connexion et les comptes clients. Les informations nécessaires à la création et à l'accès au compte, notamment l'adresse e-mail et les données d'authentification, sont traitées à cette fin. Elles sont stockées et traitées sur l'infrastructure de Supabase. Veuillez également consulter les informations de confidentialité de Supabase. Les services de paiement tels que Stripe ainsi que le suivi analytique ou marketing ne font actuellement pas partie de ce site.", "note"]
       ]
     },
     terms: {
@@ -551,12 +550,13 @@ const fr: Dictionary = {
         ["1. Champ d'application", "Les présentes conditions régissent la relation contractuelle entre KLYKGO et ses clients pour le marketing, le branding, le web design et développement, la signalétique, le contenu et les services par abonnement."],
         ["2. Offres et conclusion du contrat", "L'étendue des prestations, le prix, les délais et les conditions particulières résultent de l'offre concernée ou de l'abonnement choisi. Le contrat est conclu dès qu'une offre est acceptée ou qu'un abonnement payant est valablement souscrit."],
         ["3. Prix et paiement", "Tous les prix, devises, taxes, délais de paiement et éventuels frais supplémentaires sont indiqués de manière transparente avant la conclusion du contrat. Les abonnements récurrents sont facturés selon l'intervalle affiché lors de la souscription."],
-        ["4. Abonnements, modifications et résiliation", "La durée minimale définitive, le renouvellement, les règles d'upgrade ou downgrade et les délais de résiliation seront définis avant l'activation des abonnements payants et clairement indiqués lors du paiement."],
+        ["4. Abonnements, modifications et résiliation", "La durée, le renouvellement et le délai de résiliation d'un abonnement sont régis par l'offre concernée. Sauf accord écrit contraire, un abonnement peut être résilié à la fin de la durée convenue. Les prestations déjà fournies et les frais de tiers engagés restent dus."],
         ["5. Collaboration du client", "Le client fournit à temps les contenus, accès, validations et informations nécessaires. Les retards dus à une collaboration insuffisante peuvent décaler les délais convenus."],
         ["6. Droits d'utilisation", "Le transfert des droits d'utilisation sur les designs, contenus, sites web, logiciels ou autres résultats dépend de l'offre concernée. Les droits de tiers et les éléments sous licence restent réservés."],
-        ["7. Garantie et responsabilité", "KLYKGO fournit les prestations convenues de manière professionnelle. L'étendue et les limites de la garantie et de la responsabilité seront définies dans le contrat définitif conformément au droit suisse impératif."],
-        ["8. Dispositions finales", "Le droit applicable, le for et les conditions contractuelles complètes seront finalisés avant le lancement commercial des abonnements."],
-        ["Projet Phase 1", "Ces CGV constituent actuellement un modèle structuré. Avant l'activation de Stripe et des abonnements payants, les prix, prestations, durées, règles de résiliation et de responsabilité doivent être finalisés avec le client et vérifiés juridiquement.", "note"]
+        ["7. Acceptation et défauts", "Le client contrôle rapidement les prestations livrées et signale par écrit tout défaut identifiable dans un délai de 10 jours. KLYKGO doit d'abord avoir la possibilité de corriger le défaut. Sans signalement dans ce délai, la prestation est considérée comme acceptée pour les défauts identifiables."],
+        ["8. Responsabilité", "KLYKGO répond des dommages directs causés intentionnellement ou par négligence grave. Dans la mesure permise par la loi, toute responsabilité pour négligence légère, dommages indirects ou consécutifs, manque à gagner et interruptions de services de tiers est exclue. Les prétentions légales impératives demeurent réservées."],
+        ["9. Confidentialité et protection des données", "Les deux parties traitent avec soin les informations confidentielles de l'autre partie et ne les utilisent que pour exécuter le contrat. Les données personnelles sont traitées conformément à la Politique de confidentialité de KLYKGO et au droit suisse applicable."],
+        ["10. Dispositions finales", "Les modifications et compléments doivent revêtir la forme textuelle. Si une disposition est invalide, les autres dispositions restent applicables. Le droit suisse s'applique. Dans la mesure permise par la loi, le for exclusif est le siège de KLYKGO."]
       ]
     },
     cookies: {

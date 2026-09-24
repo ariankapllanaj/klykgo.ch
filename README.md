@@ -52,7 +52,7 @@ Restart `npm run dev`.
 Search the project for these placeholders:
 
 - `CHF XXX`
-- `hello@klykgo.ch`
+- `info@klykgo.ch`
 - Social media links (`href="#"` in footer)
 - Impressum / Datenschutz links
 - Company city/address
