@@ -12,7 +12,8 @@ export default function MobileMenu() {
   const [mounted, setMounted] = useState(false);
   const { t, language } = useLanguage();
   const isHome = usePathname() === "/";
-  const homeLink = (anchor: string) => `${isHome ? "" : "/"}#${anchor}`;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const homeLink = (anchor: string) => `${isHome ? "" : `${basePath}/`}#${anchor}`;
 
   const menuCopy = {
     de: {
@@ -43,7 +44,7 @@ export default function MobileMenu() {
     [copy.services, homeLink("leistungen")],
     [copy.process, homeLink("ablauf")],
     [copy.subscriptions, homeLink("abos")],
-    [t.nav.partner, "/partner/"],
+    [t.nav.partner, `${basePath}/partner/`],
     [copy.contact, homeLink("kontakt")]
   ] as const;
 

@@ -10,6 +10,7 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Home() {
   const { t } = useLanguage();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return (
     <main>
@@ -86,9 +87,9 @@ export default function Home() {
           <p className="eyebrow">{t.partner.eyebrow}</p>
           <h2 id="partner-feature-title">{t.partner.featureTitle}</h2>
           <p>{t.partner.featureCopy}</p>
-          <a className="button button-outline" href="/partner/">{t.partner.viewPage} <span aria-hidden="true">↗</span></a>
+          <a className="button button-outline" href={`${basePath}/partner/`}>{t.partner.viewPage} <span aria-hidden="true">↗</span></a>
         </div>
-        <a className="partner-logo-card" href="/partner/" aria-label={t.partner.viewPage}>
+        <a className="partner-logo-card" href={`${basePath}/partner/`} aria-label={t.partner.viewPage}>
           <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/it-service-manai-logo.webp`} alt="IT Service Manai — Infrastructure & Logistics" />
         </a>
       </section>

@@ -9,7 +9,9 @@ import { useLanguage } from "@/components/LanguageProvider";
 export default function SiteHeader() {
   const { t } = useLanguage();
   const isHome = usePathname() === "/";
-  const homeLink = (anchor: string) => `${isHome ? "" : "/"}#${anchor}`;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const homeLink = (anchor: string) => `${isHome ? "" : `${basePath}/`}#${anchor}`;
+  const partnerLink = `${basePath}/partner/`;
 
   return (
     <header className="topbar">
@@ -22,7 +24,7 @@ export default function SiteHeader() {
         <a href={homeLink("leistungen")}>{t.nav.services}</a>
         <a href={homeLink("ablauf")}>{t.nav.process}</a>
         <a href={homeLink("abos")}>{t.nav.subscriptions}</a>
-        <a href="/partner/" aria-current={isHome ? undefined : "page"}>{t.nav.partner}</a>
+        <a href={partnerLink} aria-current={isHome ? undefined : "page"}>{t.nav.partner}</a>
         <a href={homeLink("kontakt")}>{t.nav.contact}</a>
       </nav>
 

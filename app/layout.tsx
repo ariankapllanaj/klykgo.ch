@@ -4,6 +4,7 @@ import { AuthProvider } from "@/components/AuthProvider";
 import "./globals.css";
 
 const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -28,10 +29,10 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: "klykgo-logo-mark.jpg", type: "image/jpeg" }
+      { url: `${basePath}/klykgo-logo-mark.jpg`, type: "image/jpeg" }
     ],
-    shortcut: "klykgo-logo-mark.jpg",
-    apple: "klykgo-logo-mark.jpg"
+    shortcut: `${basePath}/klykgo-logo-mark.jpg`,
+    apple: `${basePath}/klykgo-logo-mark.jpg`
   },
 
   keywords: [

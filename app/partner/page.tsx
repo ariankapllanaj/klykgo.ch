@@ -7,6 +7,7 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 export default function PartnerPage() {
   const { t } = useLanguage();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return (
     <main className="partner-page">
@@ -18,7 +19,7 @@ export default function PartnerPage() {
           <p className="eyebrow">{t.partner.eyebrow}</p>
           <h1 id="partner-page-title">{t.partner.pageTitle}</h1>
           <p className="partner-page-lead">{t.partner.pageLead}</p>
-          <Link className="partner-back-link" href="/">← {t.partner.back}</Link>
+          <Link className="partner-back-link" href={`${basePath}/`}>← {t.partner.back}</Link>
         </div>
         <div className="partner-page-logo partner-logo-card">
           <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/it-service-manai-logo.webp`} alt="IT Service Manai — Infrastructure & Logistics" />
@@ -38,7 +39,7 @@ export default function PartnerPage() {
         <div>
           <h2>{t.partner.contactTitle}</h2>
           <p>{t.partner.contactCopy}</p>
-          <Link className="button button-solid" href="/#kontakt">{t.partner.contactAction} <span aria-hidden="true">↗</span></Link>
+          <Link className="button button-solid" href={`${basePath}/#kontakt`}>{t.partner.contactAction} <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 

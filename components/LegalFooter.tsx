@@ -38,7 +38,8 @@ export default function LegalFooter() {
   const [active, setActive] = useState<LegalPage | null>(null);
   const { t } = useLanguage();
   const isHome = usePathname() === "/";
-  const homeLink = (anchor: string) => `${isHome ? "" : "/"}#${anchor}`;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const homeLink = (anchor: string) => `${isHome ? "" : `${basePath}/`}#${anchor}`;
 
   useEffect(() => {
     const openHandler = (event: Event) => {
@@ -90,7 +91,7 @@ export default function LegalFooter() {
             <a href={homeLink("leistungen")}>{t.footer.services}</a>
             <a href={homeLink("ablauf")}>{t.footer.process}</a>
             <a href={homeLink("abos")}>{t.footer.subscriptions}</a>
-            <a href="/partner/">{t.nav.partner}</a>
+            <a href={`${basePath}/partner/`}>{t.nav.partner}</a>
             <a href={homeLink("kontakt")}>{t.footer.contact}</a>
           </nav>
 
