@@ -22,7 +22,7 @@ export default function PartnerPage() {
           <Link className="partner-back-link" href={`${basePath}/`}>← {t.partner.back}</Link>
         </div>
         <div className="partner-page-logo partner-logo-card">
-          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/it-service-manai-logo.webp`} alt="IT Service Manai — Infrastructure & Logistics" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/it-service-manai-logo-2026.jpg`} alt="IT Service Manai — Infrastructure & Logistics" />
         </div>
       </section>
 

@@ -129,7 +129,7 @@ const de = {
     },
     {
       name: "Pro", subtitle: "Die umfassende Lösung für ambitionierte Marken.",
-      features: ["Umfassende Marketing-Betreuung", "Individuelle Marketingstrategie", "Social Media & Content", "Kampagnen & Performance Marketing", "Branding & Grafikdesign", "Web-Support & digitale Beratung", "Performance-Analyse", "Persönliche Betreuung"]
+      features: ["Umfassende Marketing-Betreuung", "Individuelle Marketingstrategie", "Social Media & Content", "Kampagnen & Performance Marketing", "Branding & Grafikdesign", "Web-Support & digitale Beratung", "Entwicklung mobiler Apps", "Performance-Analyse", "Persönliche Betreuung"]
     }
   ],
   contact: {
@@ -330,7 +330,7 @@ const en: Dictionary = {
   plans: [
     { name: "Starter", subtitle: "The ideal starting point for small businesses and new brands.", features: ["Core marketing & consulting", "Social media support", "Graphic & content creation", "Small design adjustments", "Regular support", "KLYKGO support"] },
     { name: "Growth", subtitle: "For businesses that want to grow their visibility.", featured: true, features: ["Extended marketing support", "Social media management", "Content & graphic design", "Campaign support", "SEO & online visibility", "Regular optimisation", "Priority support"] },
-    { name: "Pro", subtitle: "The comprehensive solution for ambitious brands.", features: ["Comprehensive marketing support", "Custom marketing strategy", "Social media & content", "Campaigns & performance marketing", "Branding & graphic design", "Web support & digital consulting", "Performance analysis", "Personal support"] }
+    { name: "Pro", subtitle: "The comprehensive solution for ambitious brands.", features: ["Comprehensive marketing support", "Custom marketing strategy", "Social media & content", "Campaigns & performance marketing", "Branding & graphic design", "Web support & digital consulting", "Mobile app development", "Performance analysis", "Personal support"] }
   ],
   contact: {
     label: "06 / CONTACT", eyebrow: "Ready for the next step?", title1: "Let's create something", title2: "that stands out.",
@@ -508,7 +508,7 @@ const fr: Dictionary = {
   plans: [
     { name: "Starter", subtitle: "Le point de départ idéal pour les petites entreprises et les nouvelles marques.", features: ["Marketing de base & conseil", "Support réseaux sociaux", "Création graphique & contenu", "Petites adaptations design", "Accompagnement régulier", "Support KLYKGO"] },
     { name: "Growth", subtitle: "Pour les entreprises qui veulent développer leur visibilité.", featured: true, features: ["Accompagnement marketing étendu", "Gestion des réseaux sociaux", "Contenu & design graphique", "Support campagnes", "SEO & visibilité en ligne", "Optimisation régulière", "Support prioritaire"] },
-    { name: "Pro", subtitle: "La solution complète pour les marques ambitieuses.", features: ["Accompagnement marketing complet", "Stratégie marketing sur mesure", "Réseaux sociaux & contenu", "Campagnes & performance marketing", "Branding & design graphique", "Support web & conseil digital", "Analyse de performance", "Accompagnement personnalisé"] }
+    { name: "Pro", subtitle: "La solution complète pour les marques ambitieuses.", features: ["Accompagnement marketing complet", "Stratégie marketing sur mesure", "Réseaux sociaux & contenu", "Campagnes & performance marketing", "Branding & design graphique", "Support web & conseil digital", "Développement d’applications mobiles", "Analyse de performance", "Accompagnement personnalisé"] }
   ],
   contact: {
     label: "06 / CONTACT", eyebrow: "Prêt pour la prochaine étape ?", title1: "Créons quelque chose", title2: "qui se remarque.",

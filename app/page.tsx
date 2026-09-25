@@ -90,7 +90,7 @@ export default function Home() {
           <a className="button button-outline" href={`${basePath}/partner/`}>{t.partner.viewPage} <span aria-hidden="true">↗</span></a>
         </div>
         <a className="partner-logo-card" href={`${basePath}/partner/`} aria-label={t.partner.viewPage}>
-          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/it-service-manai-logo.webp`} alt="IT Service Manai — Infrastructure & Logistics" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/it-service-manai-logo-2026.jpg`} alt="IT Service Manai — Infrastructure & Logistics" />
         </a>
       </section>
 
