@@ -39,7 +39,7 @@ export default function PartnerPage() {
         <div>
           <h2>{t.partner.contactTitle}</h2>
           <p>{t.partner.contactCopy}</p>
-          <Link className="button button-solid" href={`${basePath}/#kontakt`}>{t.partner.contactAction} <span aria-hidden="true">↗</span></Link>
+          <a className="button button-solid" href="mailto:info@itservicemanai.ch">{t.partner.contactAction} <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 

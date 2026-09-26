@@ -95,7 +95,7 @@ const de = {
     scopeTitle: "Infrastruktur & Logistik",
     scopeCopy: "Wir stellen IT Service Manai als Partner vor. Details zu gemeinsamen Leistungen besprechen wir gerne direkt mit Ihnen.",
     contactTitle: "Sprechen wir über Ihr Projekt.",
-    contactCopy: "Sie möchten mehr über die Zusammenarbeit erfahren? Kontaktieren Sie KLYKGO.",
+    contactCopy: "Sie möchten mehr über die Zusammenarbeit erfahren? Kontaktieren Sie IT Service Manai.",
     contactAction: "Kontakt aufnehmen",
     back: "Zur Startseite"
   },
@@ -309,7 +309,7 @@ const en: Dictionary = {
     scopeTitle: "Infrastructure & logistics",
     scopeCopy: "We introduce IT Service Manai as a partner. Contact us to discuss the details of working together.",
     contactTitle: "Let's talk about your project.",
-    contactCopy: "Want to learn more about the partnership? Get in touch with KLYKGO.",
+    contactCopy: "Want to learn more about the partnership? Get in touch with IT Service Manai.",
     contactAction: "Get in touch",
     back: "Back to home"
   },
@@ -487,7 +487,7 @@ const fr: Dictionary = {
     scopeTitle: "Infrastructure & logistique",
     scopeCopy: "Nous présentons IT Service Manai en tant que partenaire. Contactez-nous pour discuter des détails d'une collaboration.",
     contactTitle: "Parlons de votre projet.",
-    contactCopy: "Vous souhaitez en savoir plus sur ce partenariat ? Contactez KLYKGO.",
+    contactCopy: "Vous souhaitez en savoir plus sur ce partenariat ? Contactez IT Service Manai.",
     contactAction: "Prendre contact",
     back: "Retour à l'accueil"
   },
